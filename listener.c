@@ -3,9 +3,54 @@
 #include <sys/socket.h>
 #include <sys/un.h>
 #include <stdlib.h>
+#include <string.h>
 #include "connection.h"
 
+// Implementing the KMP algorithm, for substring matching
+int match(char a[], const char sub[]){
+    // printf("%s %s %lu %lu\n", a, sub, strlen(a), strlen(sub));
+    if(strlen(a) < strlen(sub)) return 0;
+
+    char b[MAX_SUBSTRLEN_TO_CHECK];
+    strncpy(b, sub, sizeof(b));
+    strncat(b, "~", 1);
+
+    size_t prefix_match[strlen(b)];
+
+    prefix_match[0] = 0;
+
+    for(int i=1; i<strlen(b); i++){
+        int j = prefix_match[i-1];
+
+        while(j>0 && b[i] != b[j]) j = prefix_match[j-1];
+
+        if(b[i] == b[j]) j++;
+        prefix_match[i] = j;
+    }
+
+    size_t last = prefix_match[strlen(b)-1];
+    int ans = 0;
+
+    for(int i = 0; i<strlen(a); i++){
+        while(last > 0 && a[i] != b[last]) last = prefix_match[last-1];
+
+        if(a[i] == b[last]) last++;
+
+        if(last == strlen(b)-1){
+            ans = 1;
+            break;
+        }
+    }
+    return ans;
+}
+
 int main(int argc, char *argv[]){
+
+    if(argc > 2){
+        printf("Usage: %s <substring>", argv[1]);
+        return 1;
+    }
+
     struct sockaddr_un addr;
     char buf[MAX_BUFFLEN];
     int sfd, cfd, nbytes;
@@ -46,7 +91,17 @@ int main(int argc, char *argv[]){
 
         while((nbytes=read(cfd, buf, MAX_BUFFLEN)) > 0) {
             // printing the logged buffer
-            printf("%s", buf);
+            if(argc == 1)            
+                printf("%s", buf);
+            else if (argc == 2){
+                // printf("matching substring\n");
+                if(match(buf, argv[1])){
+                    printf("MATCH!\n%s", buf);
+                }
+                else{
+                    printf("NO MATCH!\n");
+                }
+            }
         }
     }
 }
