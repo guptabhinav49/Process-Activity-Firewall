@@ -23,6 +23,7 @@ typedef int (*orig_close_type)(int fd);
         close() -> 3
 */
 const char* get_metadata(int cmd, int *bytes, int *mode){
+    // getting the original functions
     orig_open_type orig_open;
     orig_open = (orig_open_type)dlsym(RTLD_NEXT, "open");   
     orig_read_type orig_read;
@@ -30,6 +31,7 @@ const char* get_metadata(int cmd, int *bytes, int *mode){
     orig_close_type orig_close;
     orig_close = (orig_close_type)dlsym(RTLD_NEXT, "close");
 
+    // setting up the variables to store/help store the metadata
     char* buf = (char*)malloc(MAX_BUFFLEN * sizeof(char));
     char path[MAX_PATHLEN], cmdarg[MAX_PATHLEN];
     char procfile[25];
@@ -37,28 +39,31 @@ const char* get_metadata(int cmd, int *bytes, int *mode){
     int nbytes = readlink("/proc/self/exe", path, MAX_PATHLEN-1);
     path[nbytes] = '\0';
 
+    // getting the PID, parent PID
     int PID = getpid();
     int PPID = getppid();
-    // if(cmd == 0)
-    //     puts("here in open()");
+    
+    // getting the command line arguments
     sprintf(procfile, "/proc/%d/cmdline", PID);
     int fd = orig_open(procfile, O_RDONLY);
 
     nbytes = orig_read(fd, cmdarg, MAX_PATHLEN-1);
-
     orig_close(fd);
-    // printf("-%s--%d---\n", cmdarg, nbytes);
+
+    // the output from the procfile is '\0' seperated, therefore replacing it with ' '
     for(int i=0; i<nbytes; i++){
         if(!cmdarg[i]) cmdarg[i] = ' ';
     }
     cmdarg[nbytes-1]='\0';
-    // puts(cmdarg);
+    
+    // finally dumping all the metadata in the buffer according to the function call
     sprintf(buf, "Metadata {PID: %d, PPID: %d, EXE_PATH: %s, CMD: %s, ", 
                 PID, 
                 PPID,
                 path,
                 cmdarg
             );
+            
     if(cmd == 0){
         sprintf(path, "MODE: %o", *mode);
         strncat(buf, path, strlen(path));
