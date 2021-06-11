@@ -4,7 +4,7 @@
 #include <sys/un.h>
 #include <stdlib.h>
 #include <string.h>
-#include "connection.h"
+#include "headers.h"
 
 // Implementing the KMP algorithm, for substring matching
 int match(char a[], const char sub[]){
@@ -82,7 +82,7 @@ int main(int argc, char *argv[]){
     }
 
     // accepting connections from the active sockets
-    printf("Accepting active sockets...\n");
+    printf("Process-Activity-Forewall\n\n");
     while(1){
         if((cfd = accept(sfd, NULL, NULL)) == -1){
             perror("accept error");
@@ -96,11 +96,11 @@ int main(int argc, char *argv[]){
             else if (argc == 2){
                 // printf("matching substring\n");
                 if(match(buf, argv[1])){
-                    printf("MATCH!\n%s", buf);
+                    printf("%s", buf);
                 }
-                else{
-                    printf("NO MATCH!\n");
-                }
+                // else{
+                //     printf("NO MATCH!\n");
+                // }
             }
         }
         close(cfd);
