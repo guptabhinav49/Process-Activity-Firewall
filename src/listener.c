@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "headers.h"
+#include "lwjson/lwjson.h"
 
 // Implementing the KMP algorithm, for substring matching
 int match(char a[], const char sub[]){
