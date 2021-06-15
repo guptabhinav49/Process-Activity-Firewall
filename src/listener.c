@@ -1,48 +1,82 @@
-#include <stdio.h>
-#include <unistd.h>
-#include <sys/socket.h>
-#include <sys/un.h>
-#include <stdlib.h>
-#include <string.h>
 #include "headers.h"
 #include "lwjson/lwjson.h"
 
-// Implementing the KMP algorithm, for substring matching
-int match(char a[], const char sub[]){
-    // printf("%s %s %lu %lu\n", a, sub, strlen(a), strlen(sub));
-    if(strlen(a) < strlen(sub)) return 0;
+static lwjson_token_t tokens[256];
+static lwjson_t lwjson;
 
-    char b[MAX_SUBSTRLEN_TO_CHECK];
-    strncpy(b, sub, sizeof(b));
-    strncat(b, "~", 1);
+int mode, verbose;
+char logfile_path[MAX_PATHLEN];
+char filepaths[MAX_FILES][MAX_PATHLEN];
+char count_files;
 
-    size_t prefix_match[strlen(b)];
+int parse_JSON(const char *c){
+    lwjson_init(&lwjson, tokens, LWJSON_ARRAYSIZE(tokens));
+    return lwjson_parse(&lwjson, c);
+}
 
-    prefix_match[0] = 0;
-
-    for(int i=1; i<strlen(b); i++){
-        int j = prefix_match[i-1];
-
-        while(j>0 && b[i] != b[j]) j = prefix_match[j-1];
-
-        if(b[i] == b[j]) j++;
-        prefix_match[i] = j;
+int read_config(){
+    int fd = open(CONFIGFILE_PATH, O_RDONLY);
+    if(fd < 0) {
+        perror("cannot find the config file, using defaults");
+        return -1;
     }
+    char buff[MAX_CONFIGSIZE];
+    int bytes = read(fd, buff, MAX_CONFIGSIZE-1);
 
-    size_t last = prefix_match[strlen(b)-1];
-    int ans = 0;
+    if(bytes == MAX_CONFIGSIZE-1){
+        perror("config size exceeded");
+        return -1;
+    }
+    close(fd);
+    buff[bytes] = '\0';
 
-    for(int i = 0; i<strlen(a); i++){
-        while(last > 0 && a[i] != b[last]) last = prefix_match[last-1];
+    if(parse_JSON(buff) == lwjsonOK){
+        const lwjson_token_t* t;
+        printf("Config parsed...\n");
 
-        if(a[i] == b[last]) last++;
-
-        if(last == strlen(b)-1){
-            ans = 1;
-            break;
+        if((t = lwjson_find(&lwjson, "mode")) != NULL){
+            mode = (int)lwjson_get_val_int(t);
+        }
+        if((t = lwjson_find(&lwjson, "verbose")) != NULL){
+            verbose = (t->type == LWJSON_TYPE_TRUE ? 1 : 0);
+        }
+        if((t = lwjson_find(&lwjson, "logfile_path")) != NULL){
+            size_t s;
+            sprintf(logfile_path, "%.*s", (int)s, lwjson_get_val_string(t, &s));
+        }
+        if((t = lwjson_find(&lwjson, "filepaths")) != NULL){
+            assert(t->type == LWJSON_TYPE_ARRAY);
+            int i = 0;
+            for(const lwjson_token_t* tkn = lwjson_get_first_child(t); tkn!=NULL; tkn = tkn->next){
+                size_t s;
+                sprintf(*(filepaths+i), "%.*s", (int)s, lwjson_get_val_string(tkn, &s));
+                i++;
+                if(i == MAX_FILES){
+                    perror("max file limit reached");
+                    break;
+                }
+            }
+            count_files = i;
+            
+            // sorting the filenames to falicitate log(n) find queries
+            sort(filepaths, count_files);
         }
     }
-    return ans;
+    else{
+        printf("JSON not parsed! %d\n", parse_JSON(buff));
+    }
+
+    FILE *fp;
+    fp = fopen(logfile_path, "w");
+    if(!fp){
+        perror("Unable to open the logfile");
+        exit(0);
+    }
+    fprintf(fp, "{\n\"config\": %s,\n\"logs\": [\n\t{}\n]\n}", buff);
+    fflush(fp);
+    fclose(fp);
+
+    return 0;
 }
 
 int main(int argc, char *argv[]){
@@ -50,6 +84,16 @@ int main(int argc, char *argv[]){
     if(argc > 2){
         printf("Usage: %s <substring>", argv[1]);
         return 1;
+    }
+    // defualt configurations
+    mode = 3;
+    verbose = 1;
+    count_files = 0;
+    // reading the configuration file
+
+
+    if(read_config() < 0){
+        perror("error while reading config file, using defaults");
     }
 
     struct sockaddr_un addr;
@@ -82,8 +126,18 @@ int main(int argc, char *argv[]){
         exit(-1);
     }
 
+    if(verbose){
+        printf("mode: %d, verbose: %d, logfile_path: %s. Ignoring/monitoring files\n", mode, verbose, logfile_path);
+        for(int i=0; i<count_files; i++){
+            printf("\t%d. %s\n", i+1, filepaths[i]);
+        }  
+    }
+    FILE *fp;
+    fp = fopen(logfile_path, "r+");
     // accepting connections from the active sockets
-    printf("Process-Activity-Forewall\n\n");
+    printf("\n##########################\nProcess-Activity-Firewall\n##########################\n");
+    // fprintf(fp, "\n##########################\nProcess-Activity-Firewall\n##########################\n");
+
     while(1){
         if((cfd = accept(sfd, NULL, NULL)) == -1){
             perror("accept error");
@@ -92,18 +146,59 @@ int main(int argc, char *argv[]){
 
         while((nbytes=read(cfd, buf, MAX_BUFFLEN)) > 0) {
             // printing the logged buffer
-            if(argc == 1)            
-                printf("%s", buf);
-            else if (argc == 2){
-                // printf("matching substring\n");
-                if(match(buf, argv[1])){
-                    printf("%s", buf);
+            if(parse_JSON(buf) == lwjsonOK){
+                const lwjson_token_t* t;
+                char filename[MAX_PATHLEN];
+                size_t s;
+                int f = 0, m = 1;
+                if((t = lwjson_find(&lwjson, "params.file.path")) != NULL){
+                    sprintf(filename, "%.*s", (int)s, lwjson_get_val_string(t, &s));
+                    f = find(filepaths, filename, count_files);
                 }
-                // else{
-                //     printf("NO MATCH!\n");
-                // }
+                if (argc == 2){
+                    // printf("matching substring\n");
+                    m = match(buf, argv[1]);
+                }
+
+                switch (mode)
+                {
+                    case 0:
+                        break;
+                    case 1:
+                        if(m) {
+                            if(verbose) printf(",%s", buf);
+                            fseeko(fp, -4, SEEK_END);
+                            ftruncate(fileno(fp), ftello(fp));
+                            fprintf(fp, ",%s]\n}", buf);
+                        }
+                        break;
+                    case 2:
+                        if(m && f) {
+                            if(verbose) printf(",%s", buf);
+                            fseeko(fp, -4, SEEK_END);
+                            ftruncate(fileno(fp), ftello(fp));
+                            fprintf(fp, ",%s]\n}", buf);
+                        }
+                        break;
+                    case 3:
+                        if(m && !f) {
+                            if(verbose) printf(",%s", buf);
+                            fseeko(fp, -4, SEEK_END);
+                            ftruncate(fileno(fp), ftello(fp));
+                            fprintf(fp, ",%s]\n}", buf);
+                        }
+                        break;
+                    default:
+                        break;
+                }
             }
+            else{
+                perror("wrong format logs");
+                exit(0);
+            }
+            fflush(fp);
         }
         close(cfd);
     }
+    return 0;
 }

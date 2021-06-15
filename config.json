@@ -1,0 +1,12 @@
+{
+    "mode": 3,
+    "filepaths": [
+        "ab",
+        "/ababab",
+        "/sfaa",
+        "/this/is/a/path",
+        "/dev/pts/0"
+    ],
+    "verbose": true,
+    "logfile_path": "../logs.json"
+}

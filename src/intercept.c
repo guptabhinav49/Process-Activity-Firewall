@@ -1,12 +1,5 @@
 #define _GNU_SOURCE
 #include <dlfcn.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <sys/stat.h>
-#include <sys/socket.h>
-#include <sys/un.h>
-#include <fcntl.h>
 #include "headers.h"
 
 // typedef int (*orig_open2_type)(const char *pathname, int flags);
@@ -57,7 +50,7 @@ const char* get_metadata(int cmd, int *bytes, int *mode){
     cmdarg[nbytes-1]='\0';
     
     // finally dumping all the metadata in the buffer according to the function call
-    sprintf(buf, "Metadata {PID: %d, PPID: %d, EXE_PATH: %s, CMD: %s, ", 
+    sprintf(buf, "\t\t\"metadata\": {\"PID\": %d, \"PPID\": %d, \"EXE_PATH\": \"%s\", \"CMD\": \"%s\"", 
                 PID, 
                 PPID,
                 path,
@@ -65,18 +58,18 @@ const char* get_metadata(int cmd, int *bytes, int *mode){
             );
             
     if(cmd == 0){
-        sprintf(path, "MODE: %o", *mode);
+        sprintf(path, ", \"MODE\": \"%o\"", *mode);
         strncat(buf, path, strlen(path));
     }
     else if(cmd == 1){
-        sprintf(path, "BYTES_WRITTEN: %d", *bytes);
+        sprintf(path, ", \"BYTES_WRITTEN\": %d", *bytes);
         strncat(buf, path, strlen(path));
     }
     else if (cmd == 2){
-        sprintf(path, "BYTES_READ: %d", *bytes);
+        sprintf(path, ", \"BYTES_READ\": %d", *bytes);
         strncat(buf, path, strlen(path));
     }
-    strncat(buf, "}\n\n", 3);
+    strncat(buf, "}\n", 2);
     return buf;
 }
 
@@ -136,15 +129,24 @@ int log_to_socket(const char *buf, size_t len){
 
 int open(const char *pathname, int flags, ...){
     // maintaining the logging info in the character string buf
-    char buf[MAX_BUFFLEN/2];
+    char getfrom[50], path[MAX_PATHLEN], temp[100], buf[MAX_BUFFLEN];
+
 
     // fetching, and then calling the original open
     orig_open_type orig_open;
     orig_open = (orig_open_type)dlsym(RTLD_NEXT, "open");
     int fd  = orig_open(pathname, flags);
 
+    sprintf(getfrom, "/proc/self/fd/%d", fd);
+    ssize_t nbytes = readlink(getfrom, path, MAX_PATHLEN);
+
     // adding the parameter values to the buffer
-    sprintf(buf, "open(%d[path: %s], %d)\n\t", fd, pathname, flags);
+    sprintf(buf, "{\n\t\t\"function\": \"open\",\n\t\t\"params\": {\"file\": {\"path\": \"%.*s\", \"fd\": %d}, \"flags\": %d},\n", (int)nbytes, path, fd, flags);
+
+    if(nbytes == MAX_PATHLEN){
+        sprintf(temp, "\t\t\"error\": \"file path may have been truncated\"\n");
+        strncat(buf, temp, sizeof(temp));
+    }
 
     // getting the open mode of the file
     int mode = 0;
@@ -153,7 +155,8 @@ int open(const char *pathname, int flags, ...){
     // concatenating the metadata for the open() call
     const char *meta = get_metadata(0, NULL, &mode);
     strncat(buf, meta, strlen(meta));
-    
+    strncat(buf, "\t}\n", 3);
+
     // logging the info to the UNIX domain socket
     if(log_to_socket(buf, strlen(buf)) != 0){
         perror("logging to socket failed");
@@ -171,14 +174,13 @@ ssize_t write(int fd, const void *buffer, size_t count){
     ssize_t nbytes = readlink(getfrom, path, MAX_PATHLEN);
 
     // adding the parameter values to buffer
-    sprintf(buf, "write(%d[path: %.*s], %p, %zu) called.", fd, (int)nbytes, path, buffer, count);
+    sprintf(buf, "{\n\t\t\"function\": \"write\",\n\t\t\"params\": {\"file\": {\"path\": \"%.*s\", \"fd\": %d}, \"buff\": \"%p\", \"count\": %zu},\n", (int)nbytes, path, fd, buffer, count);
 
     // checking whether we got the full file path or not
     if(nbytes == MAX_PATHLEN){
-        sprintf(temp, "file path may have been truncated!");
+        sprintf(temp, "\t\t\"error\": \"file path may have been truncated\"\n");
         strncat(buf, temp, sizeof(temp));
     }
-    strncat(buf, "\n\t", 2);
 
     // calling the original write() function with same parameters
     orig_write_type orig_write;
@@ -189,6 +191,7 @@ ssize_t write(int fd, const void *buffer, size_t count){
     // appending the meta data along with params of the function
     const char *meta = get_metadata(1, &writtenBytes, NULL);
     strncat(buf, meta, strlen(meta));
+    strncat(buf, "\t}\n", 3);
 
     // logging the info to the UNIX domain socket
     if(log_to_socket(buf, strlen(buf)) != 0){
@@ -208,12 +211,12 @@ ssize_t read(int fd, void *buffer, size_t count){
     ssize_t nbytes = readlink(getfrom, path, MAX_PATHLEN);
 
     // logging the parameters
-    sprintf(buf, "read(%d[path: %.*s], %p, %zu) called.", fd, (int)nbytes, path, buffer, count);
+    sprintf(buf, "{\n\t\t\"function\": \"read\",\n\t\t\"params\": {\"file\": {\"path\": \"%.*s\", \"fd\": %d}, \"buff\": \"%p\", \"count\": %zu},\n", (int)nbytes, path, fd, buffer, count);
+
     if(nbytes == MAX_PATHLEN){
-        sprintf(temp, "file path may have been truncated!");
+        sprintf(temp, "\t\t\"error\": \"file path may have been truncated\"\n");
         strncat(buf, temp, sizeof(temp));
     }
-    strncat(buf, "\n\t", 2);
 
     // calling the original read()
     orig_read_type orig_read;
@@ -223,6 +226,7 @@ ssize_t read(int fd, void *buffer, size_t count){
     // appending the meta data along with params of the function
     const char *meta = get_metadata(2, &readBytes, NULL);
     strncat(buf, meta, strlen(meta));
+    strncat(buf, "\t}\n", 3);
 
     // logging the info to the UNIX domain socket
     if(log_to_socket(buf, strlen(buf)) != 0){
@@ -241,18 +245,19 @@ int close(int fd){
     ssize_t nbytes = readlink(getfrom, path, MAX_PATHLEN);
 
     // logging params to the buffer
-    sprintf(buf, "close(%d[path: %.*s]) called.", fd, (int)nbytes, path);
+    sprintf(buf, "{\n\t\t\"function\": \"close\",\n\t\t\"params\": {\"file\": {\"path\": \"%.*s\", \"fd\": %d} },\n", (int)nbytes, path, fd);
+
 
     // checking whether we got the full filename or not
     if(nbytes == MAX_PATHLEN){
-        sprintf(temp, "file path may have been truncated!");
+        sprintf(temp, "\t\t\"error\": \"file path may have been truncated\"\n");
         strncat(buf, temp, sizeof(temp));
     }
-    strncat(buf, "\n\t", 2);
     
     // appending the meta data along with params of the function
     const char *meta = get_metadata(3, NULL, NULL);
     strncat(buf, meta, strlen(meta));
+    strncat(buf, "\t}\n", 3);
 
     // calling the original close
     orig_close_type orig_close;
