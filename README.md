@@ -8,7 +8,7 @@
 4. Run ``./listener`` in another shell, all the intercept logs will be displayed here.
 5. To use the _substring_ feature of the listener, pass the substring to match as an argument to the listener executable as an command line argument. For example, ``./src/listener`` prints all the logs while ``./src/listener open`` prints logs that contain the substring _open_.
 
-### Config details
+### Config details:
 
 We have three config settings currently that can be set according the user's preference. An example ``config.json`` as well as ``logs.json`` is given in the root directory.
 
