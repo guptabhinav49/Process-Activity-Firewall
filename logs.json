@@ -14,284 +14,40 @@
 "logs": [
 	{},{
 		"function": "open",
+		"params": {"file": {"path": "/home/lonewolf/repos/Process-Activity-Firewall/build/ab", "fd": 3}, "flags": 0},
+		"metadata": {"PID": 2713, "PPID": 9, "EXE_PATH": "/bin/cat", "CMD": "cat ab", "MODE": "100000"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/home/lonewolf/repos/Process-Activity-Firewall/build/ab", "fd": 3}, "buff": "0x7f05d4e17000", "count": 131072},
+		"metadata": {"PID": 2713, "PPID": 9, "EXE_PATH": "/bin/cat", "CMD": "cat ab", "BYTES_READ": 209}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/home/lonewolf/repos/Process-Activity-Firewall/build/ab", "fd": 3}, "buff": "0x7f05d4e17000", "count": 131072},
+		"metadata": {"PID": 2713, "PPID": 9, "EXE_PATH": "/bin/cat", "CMD": "cat ab", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/home/lonewolf/repos/Process-Activity-Firewall/build/ab", "fd": 3} },
+		"metadata": {"PID": 2713, "PPID": 9, "EXE_PATH": "/bin/cat", "CMD": "cat ab"}
+	},{
+		"function": "open",
 		"params": {"file": {"path": "/home/lonewolf/repos/Process-Activity-Firewall/build/.ab.swp", "fd": 3}, "flags": 1217},
-		"metadata": {"PID": 16541, "PPID": 15882, "EXE_PATH": "/bin/nano", "CMD": "nano ab", "MODE": "102001"}
+		"metadata": {"PID": 2714, "PPID": 9, "EXE_PATH": "/bin/nano", "CMD": "nano ab", "MODE": "102001"}
 	},{
 		"function": "open",
 		"params": {"file": {"path": "/home/lonewolf/repos/Process-Activity-Firewall/build/ab", "fd": 3}, "flags": 0},
-		"metadata": {"PID": 16541, "PPID": 15882, "EXE_PATH": "/bin/nano", "CMD": "nano ab", "MODE": "100000"}
+		"metadata": {"PID": 2714, "PPID": 9, "EXE_PATH": "/bin/nano", "CMD": "nano ab", "MODE": "100000"}
 	},{
 		"function": "close",
 		"params": {"file": {"path": "__", "fd": 3} },
-		"metadata": {"PID": 16541, "PPID": 15882, "EXE_PATH": "/bin/nano", "CMD": "nano ab"}
+		"metadata": {"PID": 2714, "PPID": 9, "EXE_PATH": "/bin/nano", "CMD": "nano ab"}
 	},{
 		"function": "open",
 		"params": {"file": {"path": "/home/lonewolf/repos/Process-Activity-Firewall/build/ab", "fd": 3}, "flags": 1089},
-		"metadata": {"PID": 16541, "PPID": 15882, "EXE_PATH": "/bin/nano", "CMD": "nano ab", "MODE": "102001"}
+		"metadata": {"PID": 2714, "PPID": 9, "EXE_PATH": "/bin/nano", "CMD": "nano ab", "MODE": "102001"}
 	},{
 		"function": "open",
 		"params": {"file": {"path": "/home/lonewolf/repos/Process-Activity-Firewall/build/.ab.swp", "fd": 3}, "flags": 1217},
-		"metadata": {"PID": 16541, "PPID": 15882, "EXE_PATH": "/bin/nano", "CMD": "nano ab", "MODE": "102001"}
-	},{
-		"function": "open",
-		"params": {"file": {"path": "/home/lonewolf/repos/Process-Activity-Firewall/build/ab", "fd": 3}, "flags": 577},
-		"metadata": {"PID": 16541, "PPID": 15882, "EXE_PATH": "/bin/nano", "CMD": "nano ab", "MODE": "100001"}
-	},{
-		"function": "open",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/01-vendor-ubuntu", "fd": 4}, "flags": 524544},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "MODE": "100000"}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/01-vendor-ubuntu", "fd": 4}, "buff": "0x5594792c4d70", "count": 4096},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 42}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/01-vendor-ubuntu", "fd": 4}, "buff": "0x5594792c4d9a", "count": 4054},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 0}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/01-vendor-ubuntu", "fd": 4}, "buff": "0x5594792c4d70", "count": 4096},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 0}
-	},{
-		"function": "close",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/01-vendor-ubuntu", "fd": 4} },
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt"}
-	},{
-		"function": "open",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/01autoremove", "fd": 4}, "flags": 524544},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "MODE": "100000"}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/01autoremove", "fd": 4}, "buff": "0x5594792c6dc0", "count": 4096},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 1018}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/01autoremove", "fd": 4}, "buff": "0x5594792c71ba", "count": 3078},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 0}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/01autoremove", "fd": 4}, "buff": "0x5594792c6dc0", "count": 4096},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 0}
-	},{
-		"function": "close",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/01autoremove", "fd": 4} },
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt"}
-	},{
-		"function": "open",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/01autoremove-kernels", "fd": 4}, "flags": 524544},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "MODE": "100000"}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/01autoremove-kernels", "fd": 4}, "buff": "0x5594792c85f0", "count": 4096},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 1576}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/01autoremove-kernels", "fd": 4}, "buff": "0x5594792c8c18", "count": 2520},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 0}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/01autoremove-kernels", "fd": 4}, "buff": "0x5594792c85f0", "count": 4096},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 0}
-	},{
-		"function": "close",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/01autoremove-kernels", "fd": 4} },
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt"}
-	},{
-		"function": "open",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/10periodic", "fd": 4}, "flags": 524544},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "MODE": "100000"}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/10periodic", "fd": 4}, "buff": "0x5594792cb3a0", "count": 4096},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 129}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/10periodic", "fd": 4}, "buff": "0x5594792cb421", "count": 3967},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 0}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/10periodic", "fd": 4}, "buff": "0x5594792cb3a0", "count": 4096},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 0}
-	},{
-		"function": "close",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/10periodic", "fd": 4} },
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt"}
-	},{
-		"function": "open",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/15update-stamp", "fd": 4}, "flags": 524544},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "MODE": "100000"}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/15update-stamp", "fd": 4}, "buff": "0x5594792cd2b0", "count": 4096},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 108}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/15update-stamp", "fd": 4}, "buff": "0x5594792cd31c", "count": 3988},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 0}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/15update-stamp", "fd": 4}, "buff": "0x5594792cd2b0", "count": 4096},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 0}
-	},{
-		"function": "close",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/15update-stamp", "fd": 4} },
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt"}
-	},{
-		"function": "open",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/20archive", "fd": 4}, "flags": 524544},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "MODE": "100000"}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/20archive", "fd": 4}, "buff": "0x5594792ceae0", "count": 4096},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 85}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/20archive", "fd": 4}, "buff": "0x5594792ceb35", "count": 4011},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 0}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/20archive", "fd": 4}, "buff": "0x5594792ceae0", "count": 4096},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 0}
-	},{
-		"function": "close",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/20archive", "fd": 4} },
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt"}
-	},{
-		"function": "open",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/20auto-upgrades", "fd": 4}, "flags": 524544},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "MODE": "100000"}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/20auto-upgrades", "fd": 4}, "buff": "0x5594792d0310", "count": 4096},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 80}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/20auto-upgrades", "fd": 4}, "buff": "0x5594792d0360", "count": 4016},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 0}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/20auto-upgrades", "fd": 4}, "buff": "0x5594792d0310", "count": 4096},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 0}
-	},{
-		"function": "close",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/20auto-upgrades", "fd": 4} },
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt"}
-	},{
-		"function": "open",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/20snapd.conf", "fd": 4}, "flags": 524544},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "MODE": "100000"}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/20snapd.conf", "fd": 4}, "buff": "0x5594792d1b40", "count": 4096},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 114}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/20snapd.conf", "fd": 4}, "buff": "0x5594792d1bb2", "count": 3982},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 0}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/20snapd.conf", "fd": 4}, "buff": "0x5594792d1b40", "count": 4096},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 0}
-	},{
-		"function": "close",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/20snapd.conf", "fd": 4} },
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt"}
-	},{
-		"function": "open",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/50command-not-found", "fd": 4}, "flags": 524544},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "MODE": "100000"}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/50command-not-found", "fd": 4}, "buff": "0x5594792d3370", "count": 4096},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 625}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/50command-not-found", "fd": 4}, "buff": "0x5594792d35e1", "count": 3471},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 0}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/50command-not-found", "fd": 4}, "buff": "0x5594792d3370", "count": 4096},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 0}
-	},{
-		"function": "close",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/50command-not-found", "fd": 4} },
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt"}
-	},{
-		"function": "open",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/50unattended-upgrades", "fd": 4}, "flags": 524544},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "MODE": "100000"}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/50unattended-upgrades", "fd": 4}, "buff": "0x5594792d4ba0", "count": 4096},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 3800}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/50unattended-upgrades", "fd": 4}, "buff": "0x5594792d5a78", "count": 296},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 0}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/50unattended-upgrades", "fd": 4}, "buff": "0x5594792d4ba0", "count": 4096},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 0}
-	},{
-		"function": "close",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/50unattended-upgrades", "fd": 4} },
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt"}
-	},{
-		"function": "open",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/70debconf", "fd": 4}, "flags": 524544},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "MODE": "100000"}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/70debconf", "fd": 4}, "buff": "0x5594792d6b80", "count": 4096},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 182}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/70debconf", "fd": 4}, "buff": "0x5594792d6c36", "count": 3914},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 0}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/70debconf", "fd": 4}, "buff": "0x5594792d6b80", "count": 4096},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 0}
-	},{
-		"function": "close",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/70debconf", "fd": 4} },
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt"}
-	},{
-		"function": "open",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/99update-notifier", "fd": 4}, "flags": 524544},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "MODE": "100000"}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/99update-notifier", "fd": 4}, "buff": "0x5594792d83b0", "count": 4096},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 305}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/99update-notifier", "fd": 4}, "buff": "0x5594792d84e1", "count": 3791},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 0}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/99update-notifier", "fd": 4}, "buff": "0x5594792d83b0", "count": 4096},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 0}
-	},{
-		"function": "close",
-		"params": {"file": {"path": "/etc/apt/apt.conf.d/99update-notifier", "fd": 4} },
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt"}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/usr/share/dpkg/cputable", "fd": 4}, "buff": "0x5594792d9be0", "count": 8191},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 1971}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/usr/share/dpkg/cputable", "fd": 4}, "buff": "0x5594792d9be0", "count": 8191},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 0}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/usr/share/dpkg/tupletable", "fd": 5}, "buff": "0x5594792dca40", "count": 8191},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 1361}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/usr/share/dpkg/tupletable", "fd": 5}, "buff": "0x5594792dca40", "count": 8191},
-		"metadata": {"PID": 16542, "PPID": 15882, "EXE_PATH": "/usr/bin/apt", "CMD": "apt", "BYTES_READ": 0}
+		"metadata": {"PID": 2714, "PPID": 9, "EXE_PATH": "/bin/nano", "CMD": "nano ab", "MODE": "102001"}
 	}
 ]
 }
