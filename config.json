@@ -1,12 +1,18 @@
 {
-    "mode": 3,
-    "filepaths": [
-        "ab",
-        "/ababab",
-        "/sfaa",
-        "/this/is/a/path",
-        "/dev/pts/0"
+    "filegroups": [
+        {
+            "type" : "03",
+            "expr": [
+                "ab",
+                "/ababab",
+                "/sfaa",
+                "/this/is/a/path",
+                "/dev/pts/0"
+            ],
+            "mode": 3
+        }
     ],
+    "ignore_groups": false,
     "verbose": true,
     "logfile_path": "../logs.json"
 }

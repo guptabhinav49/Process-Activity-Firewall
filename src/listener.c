@@ -1,5 +1,6 @@
 #include "headers.h"
 #include "lwjson/lwjson.h"
+#include "cwalk/cwalk.h"
 
 static lwjson_token_t tokens[256];
 static lwjson_t lwjson;

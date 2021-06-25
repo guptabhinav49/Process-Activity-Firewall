@@ -6,7 +6,10 @@ add_library(
     lwjson/lwjson_debug.c
     lwjson/lwjson.c
 )
-
+add_library(
+    cwalk STATIC
+    cwalk/cwalk.c
+)
 add_library(
     intercept SHARED
     intercept.c
