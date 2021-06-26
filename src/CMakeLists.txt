@@ -19,4 +19,4 @@ add_library(
 add_executable(listener listener.c utilites.c)
 
 target_link_libraries(intercept PRIVATE -ldl)
-target_link_libraries(listener PRIVATE lwjson)
+target_link_libraries(listener PRIVATE lwjson PRIVATE cwalk)

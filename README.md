@@ -13,20 +13,16 @@
 We have four config settings currently that can be set according the user's preference. An example ``config.json`` as well as ``logs.json`` is given in the root directory.
 
 1. ``filegroups``: This is a list of file groups. Each file group has a ``expr``, ``mode`` and ``type`` attributes. The firewall will monitor (or not) the files names given in ``expr`` depending on the ``mode`` attribute. The ``type`` attribute decides how the expressions are matched (for example, complete match or matching the regular expression with current file's absolute path). 
-    - ``expr`` - This is a list of strings (or regular expressions depending on the ``type`` attribute)
-    - ``mode`` - This sets whether a matched file is shown, not shown or whether the current group should be ignored.
-        - 0 - _all from list_
-        - 1 - _all except from list_
-        - 2 - _none_
     - ``type`` - This sets how the string in the file group is compared to the absolute path the current file being monitored.
-        - "00" - _exact match_
-        - "01" - _filepaths starting with the given strings_
-        - "02" - _filepaths ending with the given strings_
-        - "03" - _filepaths matching the regular expression_
-        - "11" - _filenames starting with the given strings_
-        - "12" - _filenames ending with the given strings_
-        - "13" - _filenames matching the regular expressions_
-    Note that the regular expressions should be in POSIX format to work correctly.
+        - 0 - _exact match_
+        - 1 - _filepaths matching the regular expressions_
+        - 2 - _filenames matching the regular expressions_
+    - ``expr`` - This is a list of strings (or regular expressions depending on the ``type`` attribute)
+    - ``mode`` - This sets whether the current group should be ignored or, whether a matched file is shown or not shown.
+        - 0 - _none_
+        - 1 - _all from list_
+        - 2 - _all except from list_
+    Note that the regular expressions should be in POSIX (extended) format to work correctly. Also, if a file(name/path) matches 2 groups with different ``(type, mode)``, then the precedence is given to the exact match i.e. if there is some group with type _0_ and some expression in its ``exprs`` mathces then that group's ``mode`` is considered, while if there is no exact match then the first regular expression that matches (if any) decides the mode
 
 2. ``ignore_filegroups`` : If set ``true``, all filegroups are ignored and all the files are monitored.
 3. ``verbose``: This boolean setting decides whether logs are shown in stdout. Defaults to _true_. 

@@ -1,15 +1,19 @@
 {
-    "filegroups": [
+    "file_groups": [
         {
-            "type" : "03",
-            "expr": [
-                "ab",
-                "/ababab",
-                "/sfaa",
-                "/this/is/a/path",
-                "/dev/pts/0"
+            "type" : 1,
+            "exprs": [
+                "^/dev/pts/*"
             ],
-            "mode": 3
+            "mode": 2
+        },
+        {
+            "type" : 2,
+            "exprs": [
+                "((ba(na)*)+)",
+                "(repos)+"
+            ],
+            "mode": 1
         }
     ],
     "ignore_groups": false,

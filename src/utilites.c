@@ -1,4 +1,5 @@
 #include "headers.h"
+#include "cwalk/cwalk.h"
 
 static int compare(const void *a, const void *b){
     return strcmp((char *)a, (char *)b);
@@ -17,6 +18,30 @@ int find(char arr[][MAX_PATHLEN], const char *name, int n){
     }
     if(strcmp(arr[idx], name) == 0) return 1;
     else return 0;
+}
+
+// matching regex
+int match_regex(regex_t *arr, char *type, const char* s, int n){
+    const char *basename;
+    char filename[MAX_PATHLEN];
+    size_t l;
+    cwk_path_get_basename(s, &basename, &l);
+    sprintf(filename, "%.*s", (int)l, basename);
+    // puts(filename);
+
+    for(int i=0; i<n; i++){
+        if(type[i] == '0'){
+            if(regexec(arr+i, s, 0, NULL, 0) == 0){
+                return i;
+            }
+        }
+        else{
+            if(regexec(arr+i, filename, 0, NULL, 0) == 0){
+                return i;
+            }
+        }
+    }
+    return -1;
 }
 
 // Implementing the KMP algorithm, for substring matching: https://cp-algorithms.com/string/prefix-function.html
