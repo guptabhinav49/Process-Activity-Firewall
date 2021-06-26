@@ -22,6 +22,7 @@ We have four config settings currently that can be set according the user's pref
         - 0 - _none_
         - 1 - _all from list_
         - 2 - _all except from list_
+
     Note that the regular expressions should be in POSIX (extended) format to work correctly. Also, if a file(name/path) matches 2 groups with different ``(type, mode)``, then the precedence is given to the exact match i.e. if there is some group with type _0_ and some expression in its ``exprs`` mathces then that group's ``mode`` is considered, while if there is no exact match then the first regular expression that matches (if any) decides the mode
 
 2. ``ignore_filegroups`` : If set ``true``, all filegroups are ignored and all the files are monitored.
