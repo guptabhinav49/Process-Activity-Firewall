@@ -10,6 +10,7 @@
 #include <string.h>
 #include <assert.h>
 #include <fcntl.h>
+#include <stdbool.h>
 #include <regex.h>
 
 #define MAX_PATHLEN 256

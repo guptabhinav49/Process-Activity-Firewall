@@ -11,6 +11,11 @@ add_library(
     cwalk/cwalk.c
 )
 add_library(
+    trie STATIC
+    trie/trie.c
+    trie/vector.c
+)
+add_library(
     intercept SHARED
     intercept.c
 )
@@ -19,4 +24,8 @@ add_library(
 add_executable(listener listener.c utilites.c)
 
 target_link_libraries(intercept PRIVATE -ldl)
-target_link_libraries(listener PRIVATE lwjson PRIVATE cwalk)
+target_link_libraries(listener 
+    PRIVATE lwjson 
+    PRIVATE cwalk
+    PRIVATE trie
+)

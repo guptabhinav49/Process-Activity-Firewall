@@ -16,7 +16,7 @@
             "mode": 1
         }
     ],
-    "ignore_groups": false,
+    "ignore_groups": true,
     "verbose": true,
     "logfile_path": "../logs.json"
 }
