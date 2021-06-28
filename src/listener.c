@@ -223,7 +223,7 @@ int main(int argc, char *argv[]){
     char buf[MAX_BUFFLEN];
     int sfd, cfd, nbytes;
 
-    if(((trie_v *)vector_get(&trie_endp, 4))->leaf == false) puts("hehe");
+    // if(((trie_v *)vector_get(&trie_endp, 4))->leaf == false) puts("hehe");
     // Creating a server socket, this is where this application listens for incoming log buffers
     if((sfd = socket(AF_UNIX, SOCK_STREAM, 0)) == -1) {
         perror("socket error");
@@ -255,7 +255,7 @@ int main(int argc, char *argv[]){
     // accepting connections from the active sockets
     printf("\n##########################\nProcess-Activity-Firewall\n##########################\n");
     
-    if(((trie_v *)vector_get(&trie_endp, 4))->leaf == false) puts("hehe");
+    // if(((trie_v *)vector_get(&trie_endp, 4))->leaf == false) puts("hehe");
     while(1){
         if((cfd = accept(sfd, NULL, NULL)) == -1){
             perror("accept error");
@@ -306,7 +306,7 @@ int main(int argc, char *argv[]){
                         puts("here checking ending of the filename");
                     }
                     if(!f && num_endp){ // ending of pathname
-                        puts(pathname);
+                        // puts(pathname);
                         if(((trie_v *)vector_get(&trie_endp, 4))->leaf == false) puts("hehe");
                         int status = trie_traverse(&trie_endp, pathname, strlen(pathname), 1);
                         if(status >= 0) f = 1;

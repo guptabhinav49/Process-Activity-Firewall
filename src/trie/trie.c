@@ -44,16 +44,16 @@ void trie_free(vector *v){
 
 int trie_traverse(vector *v, const char *s, int n, int reverse){
     if(n <= 0) return 0;
-    printf("%d\n", ((trie_v *)vector_get(v, 3))->mode);
-    printf("size: %lu\n", vector_size(v));
+    // printf("%d\n", ((trie_v *)vector_get(v, 3))->mode);
+    // printf("size: %lu\n", vector_size(v));
     int idx = 0;
     for(int i = 0; i<n; i++){
         int c = (reverse == 1 ? s[n-i-1] : s[i]);
-        printf("%c %d\n", c, idx);
+        // printf("%c %d\n", c, idx);
         if(((trie_v *)vector_get(v, idx))->leaf == true){ 
             return ((trie_v *)vector_get(v, idx))->mode;
         }
-            puts("here");
+            // puts("here");
         if(((trie_v *)vector_get(v, idx))->nxt[c] == -1){
             return -1;
         }
