@@ -1,22 +1,24 @@
 {
     "file_groups": [
         {
-            "type" : 1,
-            "exprs": [
-                "^/dev/pts/*"
-            ],
-            "mode": 2
-        },
-        {
-            "type" : 2,
+            "type" : 11,
             "exprs": [
                 "((ba(na)*)+)",
                 "(repos)+"
             ],
             "mode": 1
+        },
+        {
+            "type" : 30,
+            "exprs": [
+                "ab",
+                "banana"
+            ],
+            "mode": 2
         }
+
     ],
-    "ignore_groups": true,
+    "ignore_groups": false,
     "verbose": true,
     "logfile_path": "../logs.json"
 }

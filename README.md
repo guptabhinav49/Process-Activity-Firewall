@@ -15,15 +15,19 @@ We have four config settings currently that can be set according the user's pref
 1. ``filegroups``: This is a list of file groups. Each file group has a ``expr``, ``mode`` and ``type`` attributes. The firewall will monitor (or not) the files names given in ``expr`` depending on the ``mode`` attribute. The ``type`` attribute decides how the expressions are matched (for example, complete match or matching the regular expression with current file's absolute path). 
     - ``type`` - This sets how the string in the file group is compared to the absolute path the current file being monitored.
         - 0 - _exact match_
-        - 1 - _filepaths matching the regular expressions_
-        - 2 - _filenames matching the regular expressions_
+        - 10 - _filepaths matching the regular expressions_
+        - 11 - _filenames matching the regular expressions_
+        - 20 - _filepaths starting with the given string_
+        - 21 - _filenames starting with the given string_
+        - 30 - _filepaths ending with the given string_
+        - 31 - _filepaths ending with the given string_
     - ``expr`` - This is a list of strings (or regular expressions depending on the ``type`` attribute)
     - ``mode`` - This sets whether the current group should be ignored or, whether a matched file is shown or not shown.
         - 0 - _none_
         - 1 - _all from list_
         - 2 - _all except from list_
 
-    Note that the regular expressions should be in POSIX (extended) format to work correctly. Also, if a file(name/path) matches 2 groups with different ``(type, mode)``, then the precedence is given to the exact match i.e. if there is some group with type _0_ and some expression in its ``exprs`` mathces then that group's ``mode`` is considered, while if there is no exact match then the first regular expression that matches (if any) decides the mode
+    Note that the regular expressions should be in POSIX (extended) format to work correctly. Also, if a file(name/path) matches 2 groups with different ``(type, mode)``, then the precedence is given to the exact match i.e. if there is some group with type _0_ and some expression in its ``exprs`` mathces then that group's ``mode`` is considered, while if there is no exact match then the first regular expression that matches (if any) decides the mode. For _exact match_ mode to work correcly, only put one file group with the _exact match_ type (currently working on allowing that type for multiple groups).
 
 2. ``ignore_filegroups`` : If set ``true``, all filegroups are ignored and all the files are monitored.
 3. ``verbose``: This boolean setting decides whether logs are shown in stdout. Defaults to _true_. 
@@ -32,3 +36,5 @@ We have four config settings currently that can be set according the user's pref
 ### External libraries used:
 - [lwjson](https://github.com/MaJerle/lwjson/tree/master) to parse JSON files.
 - [cwalk](https://github.com/likle/cwalk) to parse paths.
+- Vector implementation from [here](https://www.sanfoundry.com/c-program-implement-vector/).
+- Trie implementation based on _c++_ implementation given [here](https://cp-algorithms.com/string/aho_corasick.html).

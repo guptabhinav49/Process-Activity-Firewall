@@ -1,5 +1,7 @@
 #include "trie/vector.h"
 
+// vector implementation
+
 void vector_init(vector *v){
     v->capacity = VECTOR_INIT_CAPACITY;
     v->size = 0;
