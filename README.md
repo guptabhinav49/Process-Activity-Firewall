@@ -37,4 +37,4 @@ We have four config settings currently that can be set according the user's pref
 - [lwjson](https://github.com/MaJerle/lwjson/tree/master) to parse JSON files.
 - [cwalk](https://github.com/likle/cwalk) to parse paths.
 - Vector implementation from [here](https://www.sanfoundry.com/c-program-implement-vector/).
-- Trie implementation based on _c++_ implementation given [here](https://cp-algorithms.com/string/aho_corasick.html).
+- Trie implementation based on _C++_ implementation given [here](https://cp-algorithms.com/string/aho_corasick.html).

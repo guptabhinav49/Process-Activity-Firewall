@@ -224,6 +224,7 @@ int main(int argc, char *argv[]){
     int sfd, cfd, nbytes;
 
     // if(((trie_v *)vector_get(&trie_endp, 4))->leaf == false) puts("hehe");
+     
     // Creating a server socket, this is where this application listens for incoming log buffers
     if((sfd = socket(AF_UNIX, SOCK_STREAM, 0)) == -1) {
         perror("socket error");
