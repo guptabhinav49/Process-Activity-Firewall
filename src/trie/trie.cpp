@@ -3,15 +3,6 @@
 */
 #include "trie/trie.h"
 
-void trie_v_init(trie_v *v) {
-    // free(v->nxt);
-    // v = (trie_v *) malloc(sizeof(trie_v *));
-    v->nxt = (int *) malloc(sizeof(int)*ALPHABET_SIZE);
-    for(short i=0; i<ALPHABET_SIZE; i++) v->nxt[i] = -1;
-    v->leaf = false;
-    v->mode = 1;
-}
-
 void trie_add_string(vector *v, const char *s, int n, int reverse, int mode){
     int idx = 0;
     // puts("here");
@@ -32,14 +23,6 @@ void trie_add_string(vector *v, const char *s, int n, int reverse, int mode){
     ((trie_v *)vector_get(v, idx))->leaf = true;
     ((trie_v *)vector_get(v, idx))->mode = mode;
     // printf("idx: %d, size: %lu\n", idx, vector_size(v));
-}
-
-void trie_free(vector *v){
-    for(int i=vector_size(v)-1; i>=0; i--){
-        free(((trie_v *)vector_get(v, i))->nxt);
-        // free(((trie_v *)vector_get(v, i)));
-    }
-    vector_free(v);
 }
 
 int trie_traverse(vector *v, const char *s, int n, int reverse){

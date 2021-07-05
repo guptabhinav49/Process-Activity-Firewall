@@ -1,16 +1,15 @@
 #ifndef PCA_H
 #define PCA_H
 
-#include <stdio.h>
+// #include <bits/stdc++.h>
+#include <iostream>
+#include <string.h>
+#include <string>
 #include <unistd.h>
 #include <sys/socket.h>
 #include <sys/un.h>
 #include <sys/stat.h>
-#include <stdlib.h>
-#include <string.h>
-#include <assert.h>
 #include <fcntl.h>
-#include <stdbool.h>
 #include <regex.h>
 
 #define MAX_PATHLEN 256

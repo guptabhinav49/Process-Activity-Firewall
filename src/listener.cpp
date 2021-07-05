@@ -13,7 +13,7 @@ char mode_regex[MAX_FILES_PER_TYPE/2];
 char type_regex[MAX_FILES_PER_TYPE/2];
 char fpaths_abs[MAX_FILES_PER_TYPE][MAX_PATHLEN];
 int mode_abs;
-char num_absolute, num_regex, num_begf, num_begp, num_endf, num_endp;
+int num_absolute, num_regex, num_begf, num_begp, num_endf, num_endp;
 vector trie_begf, trie_endp, trie_begp, trie_endf;
 
 // here we store the configuration file as a lwjson_t object

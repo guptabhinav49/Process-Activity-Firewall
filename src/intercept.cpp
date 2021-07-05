@@ -1,4 +1,3 @@
-#define _GNU_SOURCE
 #include <dlfcn.h>
 #include "headers.h"
 
@@ -106,15 +105,15 @@ int log_to_socket(const char *buf, size_t len){
     }
 
     // copy the buffer to socket for the server to read
-    int try = 10;
+    int t = 10;
     int done = 0;
-    while(try){
+    while(t){
         if(orig_write(sfd, buf, len+1) == len+1){
             // printf("writing %lu chars", len);
             done = 1;
             break;
         }
-        try--;
+        t--;
     }
     orig_close(sfd);
 
