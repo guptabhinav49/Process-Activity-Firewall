@@ -25,7 +25,6 @@ target_link_libraries(intercept PRIVATE -ldl)
 target_link_libraries(listener 
     PRIVATE nlohmann_json::nlohmann_json 
     PRIVATE cwalk
-    PRIVATE trie
 )
 
 target_link_libraries(config_test PRIVATE nlohmann_json::nlohmann_json)
