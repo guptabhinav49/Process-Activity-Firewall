@@ -1,42 +1,36 @@
-#include "headers.h"
-#include "cwalk/cwalk.h"
-
-static int compare(const void *a, const void *b){
-    return strcmp((char *)a, (char *)b);
-}
-
-void sort(char a[][MAX_PATHLEN], int n){
-    qsort(a, n, MAX_PATHLEN, compare);
-}
+#include <headers.hpp>
+#include <cwalk/cwalk.h>
 
 // binary search to find whether the given string exists in the list
-int find(char arr[][MAX_PATHLEN], const char *name, int n){
+int find(std::vector<std::tuple<std::string,int,int> > &fpaths, std::string &name){
+    int n = fpaths.size(); 
     int idx = 0, jmp = n/2;
     while(jmp>0){
-        if(idx+jmp < n && strcmp(arr[idx+jmp], name) <= 0) idx += jmp;
+        if(idx+jmp < n && (std::get<0>(fpaths[idx+jmp]) <= name)) idx += jmp;
         else jmp /=2;
     }
-    if(strcmp(arr[idx], name) == 0) return 1;
-    else return 0;
+    if(std::get<0>(fpaths[idx]) == name) return idx;
+    else return -1;
 }
 
 // matching regex
-int match_regex(regex_t *arr, char *type, const char* s, int n){
+int match_regex(std::vector<std::tuple<std::string,int,int,int> >& arr, std::string &name){
     const char *basename;
     char filename[MAX_PATHLEN];
     size_t l;
-    cwk_path_get_basename(s, &basename, &l);
+    cwk_path_get_basename(name.c_str(), &basename, &l);
     sprintf(filename, "%.*s", (int)l, basename);
-    // puts(filename);
 
-    for(int i=0; i<n; i++){
-        if(type[i] == '0'){
-            if(regexec(arr+i, s, 0, NULL, 0) == 0){
+    // std::cout << name << std::endl;
+
+    for(int i=0; i<(int)arr.size(); i++){
+        if(std::get<3>(arr[i]) == 0){
+            if(std::regex_match(name, std::regex(std::get<0>(arr[i])))){
                 return i;
             }
         }
         else{
-            if(regexec(arr+i, filename, 0, NULL, 0) == 0){
+            if(std::regex_match(filename, std::regex(std::get<0>(arr[i])))){
                 return i;
             }
         }
@@ -50,7 +44,7 @@ int match(char a[], const char sub[]){
 
     char b[MAX_SUBSTRLEN_TO_CHECK];
     strncpy(b, sub, sizeof(b));
-    strncat(b, "`", 1);
+    strncat(b, "`", 2);
 
     size_t prefix_match[strlen(b)];
 
@@ -79,4 +73,18 @@ int match(char a[], const char sub[]){
         }
     }
     return ans;
+}
+
+void out(std::vector<std::tuple<std::string,int,int> > &fpaths){
+    std::cout << "ABSOLUTE MATCHING" << std::endl;
+    for(auto i : fpaths){
+        std::cout << std::get<0>(i) << ' ' << std::get<1>(i) << ' ' << std::get<2>(i) << std::endl;
+    }
+}
+
+void out(std::vector<std::tuple<std::string,int,int,int> >& fpaths){
+    std::cout << "REGEX MATCHING" << std::endl;
+    for(auto i : fpaths){
+        std::cout << std::get<0>(i) << ' ' << std::get<1>(i) << ' ' << std::get<2>(i) << ' ' << std::get<3>(i) << std::endl;
+    }
 }

@@ -1,5 +1,5 @@
 #include <dlfcn.h>
-#include "headers.h"
+#include <headers.hpp>
 
 // typedef int (*orig_open2_type)(const char *pathname, int flags);
 typedef int (*orig_open_type)(const char *pathname, int flags, ...);
@@ -68,7 +68,7 @@ const char* get_metadata(int cmd, int *bytes, int *mode){
         sprintf(path, ", \"BYTES_READ\": %d", *bytes);
         strncat(buf, path, strlen(path));
     }
-    strncat(buf, "}\n", 2);
+    strncat(buf, "}\n", 3);
     return buf;
 }
 
@@ -154,7 +154,7 @@ int open(const char *pathname, int flags, ...){
     // concatenating the metadata for the open() call
     const char *meta = get_metadata(0, NULL, &mode);
     strncat(buf, meta, strlen(meta));
-    strncat(buf, "\t}\n", 3);
+    strncat(buf, "\t}\n", 4);
 
     // logging the info to the UNIX domain socket
     if(log_to_socket(buf, strlen(buf)) != 0){
@@ -190,7 +190,7 @@ ssize_t write(int fd, const void *buffer, size_t count){
     // appending the meta data along with params of the function
     const char *meta = get_metadata(1, &writtenBytes, NULL);
     strncat(buf, meta, strlen(meta));
-    strncat(buf, "\t}\n", 3);
+    strncat(buf, "\t}\n", 4);
 
     // logging the info to the UNIX domain socket
     if(log_to_socket(buf, strlen(buf)) != 0){
@@ -225,7 +225,7 @@ ssize_t read(int fd, void *buffer, size_t count){
     // appending the meta data along with params of the function
     const char *meta = get_metadata(2, &readBytes, NULL);
     strncat(buf, meta, strlen(meta));
-    strncat(buf, "\t}\n", 3);
+    strncat(buf, "\t}\n", 4);
 
     // logging the info to the UNIX domain socket
     if(log_to_socket(buf, strlen(buf)) != 0){
@@ -256,7 +256,7 @@ int close(int fd){
     // appending the meta data along with params of the function
     const char *meta = get_metadata(3, NULL, NULL);
     strncat(buf, meta, strlen(meta));
-    strncat(buf, "\t}\n", 3);
+    strncat(buf, "\t}\n", 4);
 
     // calling the original close
     orig_close_type orig_close;

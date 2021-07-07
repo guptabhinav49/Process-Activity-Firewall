@@ -1,10 +1,14 @@
 #ifndef PCA_H
 #define PCA_H
 
-// #include <bits/stdc++.h>
 #include <iostream>
+#include <iomanip>
+#include <fstream>
+#include <streambuf>
 #include <string.h>
 #include <string>
+#include <vector>
+#include <regex>
 #include <unistd.h>
 #include <sys/socket.h>
 #include <sys/un.h>
@@ -22,9 +26,12 @@
 
 // utility methods
 static int compare(const void *a, const void *b);
-void sort(char a[][MAX_PATHLEN], int n);
-int find(char arr[][MAX_PATHLEN], const char *name, int n);
-int match_regex(regex_t *arr, char *type, const char *s, int n);
+int find(std::vector<std::tuple<std::string,int,int> >&, std::string &name);
+int match_regex(std::vector<std::tuple<std::string,int,int,int> >&, std::string &name);
 int match(char a[], const char sub[]);
+
+// printing funtions
+void out(std::vector<std::tuple<std::string,int,int> > &fpaths);
+void out(std::vector<std::tuple<std::string,int,int,int> >& fpaths);
 
 #endif

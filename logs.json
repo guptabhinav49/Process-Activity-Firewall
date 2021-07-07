@@ -2,20 +2,20 @@
 "config": {
     "file_groups": [
         {
-            "type" : 11,
+            "type" : 10,
+            "permission" : 0,
             "exprs": [
-                "((ba(na)*)+)",
-                "(repos)+"
+                "(.*)/dev/pts/(.*)"
             ],
-            "mode": 1
+            "log_mode": 2
         },
         {
-            "type" : 30,
+            "type" : 21,
+            "permission" : 0,
             "exprs": [
-                "ab",
                 "banana"
             ],
-            "mode": 2
+            "log_mode": 2
         }
 
     ],
@@ -24,6 +24,22 @@
     "logfile_path": "../logs.json"
 },
 "logs": [
-	{}
+	{},{
+		"function": "open",
+		"params": {"file": {"path": "/home/lonewolf/repos/Process-Activity-Firewall/build/bananayellow", "fd": 3}, "flags": 0},
+		"metadata": {"PID": 69195, "PPID": 65427, "EXE_PATH": "/usr/bin/cat", "CMD": "cat bananayellow", "MODE": "100000"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/home/lonewolf/repos/Process-Activity-Firewall/build/bananayellow", "fd": 3}, "buff": "0x7f0099222000", "count": 131072},
+		"metadata": {"PID": 69195, "PPID": 65427, "EXE_PATH": "/usr/bin/cat", "CMD": "cat bananayellow", "BYTES_READ": 4}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/home/lonewolf/repos/Process-Activity-Firewall/build/bananayellow", "fd": 3}, "buff": "0x7f0099222000", "count": 131072},
+		"metadata": {"PID": 69195, "PPID": 65427, "EXE_PATH": "/usr/bin/cat", "CMD": "cat bananayellow", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/home/lonewolf/repos/Process-Activity-Firewall/build/bananayellow", "fd": 3} },
+		"metadata": {"PID": 69195, "PPID": 65427, "EXE_PATH": "/usr/bin/cat", "CMD": "cat bananayellow"}
+	}
 ]
 }

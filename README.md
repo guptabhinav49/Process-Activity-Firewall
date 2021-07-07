@@ -20,7 +20,7 @@ We have four config settings currently that can be set according the user's pref
         - 20 - _filepaths starting with the given string_
         - 21 - _filenames starting with the given string_
         - 30 - _filepaths ending with the given string_
-        - 31 - _filepaths ending with the given string_
+        - 31 - _filenames ending with the given string_
     - ``expr`` - This is a list of strings (or regular expressions depending on the ``type`` attribute)
     - ``mode`` - This sets whether the current group should be ignored or, whether a matched file is shown or not shown.
         - 0 - _none_

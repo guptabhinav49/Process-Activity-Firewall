@@ -1,49 +1,55 @@
 /*
     Trie data structure implentation
 */
-#include "trie/trie.h"
+#include <trie/trie.hpp>
 
-void trie_add_string(vector *v, const char *s, int n, int reverse, int mode){
-    int idx = 0;
-    // puts("here");
-    for(int i=0; i<n; i++){
-        int c = (reverse == 1 ? s[n-i-1] : s[i]);
-
-        trie_v *emptyV;
-        if(((trie_v *)vector_get(v, idx))->nxt[c] == -1){
-            // puts("here");
-            trie_v *ex = (trie_v *)vector_get(v, idx);
-            ex->nxt[c] = vector_size(v);
-            emptyV = (trie_v *)malloc(sizeof(trie_v));
-            trie_v_init(emptyV);
-            vector_add(v, emptyV);
-        }
-        idx = ((trie_v *)vector_get(v, idx))->nxt[c];
-    }
-    ((trie_v *)vector_get(v, idx))->leaf = true;
-    ((trie_v *)vector_get(v, idx))->mode = mode;
-    // printf("idx: %d, size: %lu\n", idx, vector_size(v));
+Vertex::Vertex(){
+    std::fill(std::begin(next), std::end(next), -1);
+    leaf = false;
+    mode = 0;
+    permission = 0;
 }
 
-int trie_traverse(vector *v, const char *s, int n, int reverse){
-    if(n <= 0) return 0;
-    // printf("%d\n", ((trie_v *)vector_get(v, 3))->mode);
-    // printf("size: %lu\n", vector_size(v));
-    int idx = 0;
-    for(int i = 0; i<n; i++){
-        int c = (reverse == 1 ? s[n-i-1] : s[i]);
-        // printf("%c %d\n", c, idx);
-        if(((trie_v *)vector_get(v, idx))->leaf == true){ 
-            return ((trie_v *)vector_get(v, idx))->mode;
-        }
-            // puts("here");
-        if(((trie_v *)vector_get(v, idx))->nxt[c] == -1){
-            return -1;
-        }
-        idx = ((trie_v *)vector_get(v, idx))->nxt[c];
+Trie::Trie(){
+    trie = std::vector<Vertex> (1);
+}
+
+void Trie::add_string(std::string& s, int permission, int mode, bool reverse){
+    int v = 0;
+    for(int i=0; i<(int)s.length(); i++){
+        int ch = (reverse? s[s.length()-i-1] : s[i]);
+        if(trie[v].next[ch] == -1){
+            trie[v].next[ch] = trie.size();
+            trie.emplace_back();
+        }   
+        v = trie[v].next[ch];
     }
-    if(((trie_v *)vector_get(v, idx))->leaf == true) {
-        return ((trie_v *)vector_get(v, idx))->mode;
+    trie[v].leaf = true;
+    trie[v].mode = mode;
+    trie[v].permission = permission;
+}
+
+bool Trie::traverse(const std::string& s, int& permission, int& mode, bool reverse) const {
+    int v = 0;
+    for(int i=0; i<(int)s.size(); i++){
+        int ch = (reverse?s[s.size()-i-1]:s[i]);
+        printf("asd %d %c\n", i, ch);
+        if(trie[v].leaf){
+            mode = trie[v].mode;
+            permission = trie[v].permission;
+            return 1;
+        }
+        else if(trie[v].next[ch] == -1) return 0;
+        else v = trie[v].next[ch];
     }
-    return -1;
+    if(trie[v].leaf){
+        mode = trie[v].mode;
+        permission = trie[v].permission;
+    }
+
+    return trie[v].leaf;
+}
+
+size_t Trie::size(){
+    return trie.size()-1;
 }
