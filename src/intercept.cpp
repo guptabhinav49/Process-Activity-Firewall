@@ -214,7 +214,7 @@ ssize_t write(int fd, const void *buffer, size_t count){
 
     ssize_t nbytes = readlink(getfrom, path, MAX_PATHLEN);
 
-    sprintf(buf, "{\"path\": \"%s\"}", path);
+    sprintf(buf, "{\"path\": \"%.*s\"}", (int)nbytes, path);
 
     if(log_to_socket(buf, strlen(buf), 1, perm) != 0){
         perror("logging to socket failed");
@@ -261,7 +261,7 @@ ssize_t read(int fd, void *buffer, size_t count){
     
     ssize_t nbytes = readlink(getfrom, path, MAX_PATHLEN);
 
-    sprintf(buf, "{\"path\": \"%s\"}", path);
+    sprintf(buf, "{\"path\": \"%.*s\"}", (int)nbytes, path);;
 
     if(log_to_socket(buf, strlen(buf), 1, perm) != 0){
         perror("logging to socket failed");
@@ -304,7 +304,7 @@ int close(int fd){
 
     ssize_t nbytes = readlink(getfrom, path, MAX_PATHLEN);
 
-    sprintf(buf, "{\"path\": \"%s\"}", path);
+    sprintf(buf, "{\"path\": \"%.*s\"}", (int)nbytes, path);
 
     if(log_to_socket(buf, strlen(buf), 1, perm) != 0){
         perror("logging to socket failed");

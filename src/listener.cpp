@@ -252,7 +252,8 @@ int main(int argc, char *argv[]){
                 
                 if(j["path"].is_null() && (permission == 0 || permission == 3)){
                     size_t s;
-                    // int f = 0, m = 1, mode = !ignore_grps, permission = 0;
+                    printf("f: %d, mode: %d, permission: %d, logged: %d", f, mode, permission, logged);
+                    cout << endl;
                     int m = 1;
                     
                     if (argc == 2){
@@ -299,7 +300,6 @@ int main(int argc, char *argv[]){
                 else if(!j["path"].is_null()){
                     f = 0; mode = !ignore_grps; permission = 0; logged = 0;
                     string pathname = j["path"];
-                    pathname = pathname.substr(1, pathname.length()-1);
 
                     // matching the filepath/filename using the stored config data
                     if(!ignore_grps){
