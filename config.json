@@ -1,20 +1,24 @@
 {
     "file_groups": [
         {
+            "permission" : [
+                "allow"
+            ],
             "type" : 10,
-            "permission" : 0,
             "exprs": [
                 "(.*)/dev/pts/(.*)"
             ],
-            "log_mode": 2
+            "mode": 2
         },
         {
+            "permission" : [
+                "deny"
+            ],
             "type" : 21,
-            "permission" : 0,
             "exprs": [
                 "banana"
             ],
-            "log_mode": 2
+            "mode": 2
         }
 
     ],

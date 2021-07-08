@@ -1,5 +1,6 @@
 #include <dlfcn.h>
 #include <headers.hpp>
+#include <cwalk/cwalk.h>
 
 // typedef int (*orig_open2_type)(const char *pathname, int flags);
 typedef int (*orig_open_type)(const char *pathname, int flags, ...);
@@ -72,14 +73,15 @@ const char* get_metadata(int cmd, int *bytes, int *mode){
     return buf;
 }
 
-int log_to_socket(const char *buf, size_t len){
+int log_to_socket(const char *buf, size_t len, bool get_response, int &perm){
     
     // making sure, this function doesn't call the tampered write() and close() functions, to avoid the recursive calls
     orig_write_type orig_write;
     orig_write = (orig_write_type)dlsym(RTLD_NEXT, "write");
-
     orig_close_type orig_close;
     orig_close = (orig_close_type)dlsym(RTLD_NEXT, "close");
+    orig_read_type orig_read;
+    orig_read = (orig_read_type)dlsym(RTLD_NEXT, "read");
 
     struct sockaddr_un addr;
     
@@ -115,6 +117,24 @@ int log_to_socket(const char *buf, size_t len){
         }
         t--;
     }
+
+    char response[10];
+    int nbytes;
+    // std::cout << "awaiting response\n";
+    if((nbytes=orig_read(sfd, response, 10))>0){
+        std::string r(response);
+        if(r=="deny"){
+            perm = 1;
+        }
+    }
+    else{
+        if(nbytes<0) perror("read");
+        else{
+            printf("server connection problem\n");
+        }
+    }
+    // std::cout << response << std::endl;
+
     orig_close(sfd);
 
     // return error if write to socket is not successful
@@ -129,23 +149,44 @@ int log_to_socket(const char *buf, size_t len){
 int open(const char *pathname, int flags, ...){
     // maintaining the logging info in the character string buf
     char getfrom[50], path[MAX_PATHLEN], temp[100], buf[MAX_BUFFLEN];
+    int perm = 0;
 
+    if(cwk_path_is_relative(pathname)){ 
 
+        char base[MAX_PATHLEN];
+        if(getcwd(base, sizeof(base)) == NULL){
+            perror("getcwd() error");
+            return 1;
+        }
+        cwk_path_get_absolute(base, pathname, path, sizeof(path));
+    }
+    else{
+        sprintf(path, "%s", pathname);
+    }
+    sprintf(buf, "{\"path\": \"%s\"}", path);
+
+    if(log_to_socket(buf, strlen(buf), 1, perm) != 0){
+        perror("logging to socket failed");
+    }
+    if(perm==1){
+        std::cerr << "Permission Error" << std::endl;
+        return -1;
+    }
     // fetching, and then calling the original open
     orig_open_type orig_open;
     orig_open = (orig_open_type)dlsym(RTLD_NEXT, "open");
     int fd  = orig_open(pathname, flags);
 
-    sprintf(getfrom, "/proc/self/fd/%d", fd);
-    ssize_t nbytes = readlink(getfrom, path, MAX_PATHLEN);
-
+    // sprintf(getfrom, "/proc/self/fd/%d", fd);
+    // ssize_t nbytes = readlink(getfrom, path, MAX_PATHLEN);
+    
     // adding the parameter values to the buffer
-    sprintf(buf, "{\n\t\t\"function\": \"open\",\n\t\t\"params\": {\"file\": {\"path\": \"%.*s\", \"fd\": %d}, \"flags\": %d},\n", (int)nbytes, path, fd, flags);
+    sprintf(buf, "{\n\t\t\"function\": \"open\",\n\t\t\"params\": {\"file\": {\"path\": \"%s\", \"fd\": %d}, \"flags\": %d},\n", path, fd, flags);
 
-    if(nbytes == MAX_PATHLEN){
-        sprintf(temp, "\t\t\"error\": \"file path may have been truncated\"\n");
-        strncat(buf, temp, sizeof(temp));
-    }
+    // if(nbytes == MAX_PATHLEN){
+    //     sprintf(temp, "\t\t\"error\": \"file path may have been truncated\"\n");
+    //     strncat(buf, temp, sizeof(temp));
+    // }
 
     // getting the open mode of the file
     int mode = 0;
@@ -157,7 +198,7 @@ int open(const char *pathname, int flags, ...){
     strncat(buf, "\t}\n", 4);
 
     // logging the info to the UNIX domain socket
-    if(log_to_socket(buf, strlen(buf)) != 0){
+    if(log_to_socket(buf, strlen(buf), 0 , perm) != 0){
         perror("logging to socket failed");
     }
 
@@ -166,11 +207,22 @@ int open(const char *pathname, int flags, ...){
 
 ssize_t write(int fd, const void *buffer, size_t count){
 
+    int perm = 0;
     // setting the getfrom string to get the path from the file descriptor
     char getfrom[50], path[MAX_PATHLEN], temp[100], buf[MAX_BUFFLEN];
     sprintf(getfrom, "/proc/self/fd/%d", fd);
 
     ssize_t nbytes = readlink(getfrom, path, MAX_PATHLEN);
+
+    sprintf(buf, "{\"path\": \"%s\"}", path);
+
+    if(log_to_socket(buf, strlen(buf), 1, perm) != 0){
+        perror("logging to socket failed");
+    }
+    if(perm==1){
+        std::cerr << "Permission Error" << std::endl;
+        return -1;
+    }
 
     // adding the parameter values to buffer
     sprintf(buf, "{\n\t\t\"function\": \"write\",\n\t\t\"params\": {\"file\": {\"path\": \"%.*s\", \"fd\": %d}, \"buff\": \"%p\", \"count\": %zu},\n", (int)nbytes, path, fd, buffer, count);
@@ -193,7 +245,7 @@ ssize_t write(int fd, const void *buffer, size_t count){
     strncat(buf, "\t}\n", 4);
 
     // logging the info to the UNIX domain socket
-    if(log_to_socket(buf, strlen(buf)) != 0){
+    if(log_to_socket(buf, strlen(buf), 0, perm) != 0){
         perror("logging to socket failed");
     }
 
@@ -201,7 +253,7 @@ ssize_t write(int fd, const void *buffer, size_t count){
 }
 
 ssize_t read(int fd, void *buffer, size_t count){
-
+    int perm = 0;
     // get_metadata();
     // setting getfrom string to get the path from the file descriptor
     char getfrom[50], path[MAX_PATHLEN], temp[100], buf[MAX_BUFFLEN];
@@ -209,6 +261,15 @@ ssize_t read(int fd, void *buffer, size_t count){
     
     ssize_t nbytes = readlink(getfrom, path, MAX_PATHLEN);
 
+    sprintf(buf, "{\"path\": \"%s\"}", path);
+
+    if(log_to_socket(buf, strlen(buf), 1, perm) != 0){
+        perror("logging to socket failed");
+    }
+    if(perm==1){
+        std::cerr << "Permission Error" << std::endl;
+        return -1;
+    }
     // logging the parameters
     sprintf(buf, "{\n\t\t\"function\": \"read\",\n\t\t\"params\": {\"file\": {\"path\": \"%.*s\", \"fd\": %d}, \"buff\": \"%p\", \"count\": %zu},\n", (int)nbytes, path, fd, buffer, count);
 
@@ -228,7 +289,7 @@ ssize_t read(int fd, void *buffer, size_t count){
     strncat(buf, "\t}\n", 4);
 
     // logging the info to the UNIX domain socket
-    if(log_to_socket(buf, strlen(buf)) != 0){
+    if(log_to_socket(buf, strlen(buf), 0, perm) != 0){
         perror("logging to socket failed");
     }
 
@@ -236,12 +297,22 @@ ssize_t read(int fd, void *buffer, size_t count){
 }
 
 int close(int fd){
-    // get_metadata();
+    int perm = 0;
     // setting getfrom string to get the path from the file descriptor
     char getfrom[50], path[MAX_PATHLEN], buf[MAX_BUFFLEN], temp[100];
     sprintf(getfrom, "/proc/self/fd/%d", fd);
 
     ssize_t nbytes = readlink(getfrom, path, MAX_PATHLEN);
+
+    sprintf(buf, "{\"path\": \"%s\"}", path);
+
+    if(log_to_socket(buf, strlen(buf), 1, perm) != 0){
+        perror("logging to socket failed");
+    }
+    if(perm==1){
+        std::cerr << "Permission Error" << std::endl;
+        return -1;
+    }
 
     // logging params to the buffer
     sprintf(buf, "{\n\t\t\"function\": \"close\",\n\t\t\"params\": {\"file\": {\"path\": \"%.*s\", \"fd\": %d} },\n", (int)nbytes, path, fd);
@@ -263,7 +334,7 @@ int close(int fd){
     orig_close = (orig_close_type)dlsym(RTLD_NEXT, "close");
 
     // logging the info to the UNIX domain socket
-    if(log_to_socket(buf, strlen(buf)) != 0){
+    if(log_to_socket(buf, strlen(buf), 0, perm) != 0){
         perror("logging to socket failed");
     }
 

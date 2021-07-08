@@ -33,7 +33,7 @@ bool Trie::traverse(const std::string& s, int& permission, int& mode, bool rever
     int v = 0;
     for(int i=0; i<(int)s.size(); i++){
         int ch = (reverse?s[s.size()-i-1]:s[i]);
-        printf("asd %d %c\n", i, ch);
+        // printf("asd %d %c\n", i, ch);
         if(trie[v].leaf){
             mode = trie[v].mode;
             permission = trie[v].permission;

@@ -39,8 +39,37 @@ int read_config(){
     if(!j["file_groups"].is_null()){
         for(json grp : j["file_groups"]){
             int type = grp["type"];
-            int permission = grp["permission"];
-            int mode = grp["log_mode"];
+            // cout << "here" << endl;
+            vector<string> ps = grp["permission"];
+            // cout << "passed" << endl;
+            
+            int permission;
+            sort(ps.begin(), ps.end());
+
+            /*  permission values
+                "log" : 0
+                "deny": 1
+                "allow" : 2
+                "log" and "allow" : 3
+                otherwise : 0
+            */
+            if(ps.size() == 1){
+                permission = (ps[0]=="allow" ? 2 :(ps[0]=="deny"? 1 : 0));
+            }
+            else if(ps.size() == 2){
+                if(ps[0]=="allow") permission = 3;
+                else {
+                    cerr << "Invalid format detected. Only logging for now." << endl;
+                    permission = 0;
+                }
+            }
+            else {
+                cerr << "Too many arguments in the permission list, " << grp[permission] << endl;
+                cerr << "Only logging is set." << endl;
+                permission = 0;
+            }
+
+            int mode = grp["mode"];
 
             if(!grp["exprs"].is_null()){
                 for(string s : grp["exprs"]){
@@ -92,6 +121,56 @@ int read_config(){
     fclose(fp);
 
     return 0;
+}
+
+void search_for_match(string &pathname, int &f, int &mode, int &permission){
+    const char *basename;
+    char filename[MAX_PATHLEN];
+    size_t l;
+    cwk_path_get_basename(pathname.c_str(), &basename, &l);
+    sprintf(filename, "%.*s", (int)l, basename);
+    // cout << filename << endl;
+    // the other criterias are matched only if the preceding criterias aren't matched
+    
+    if(fpaths_abs.size() > 0) { // exact match
+        int v = find(fpaths_abs, pathname);
+        if(v >=0 ) {
+            mode = get<2>(fpaths_abs[v]);
+            permission = get<1>(fpaths_abs[v]);
+            f = 1;
+        }
+    }
+    if(!f && begf.size()>0){ // beginning of pathname
+        f = begf.traverse(filename, permission, mode, 0);
+        if(f) mode++;
+        // cout << "checking the beginning of the filename" << f << endl;
+    }
+    if(!f && begp.size()>0){ // beginning of filename
+        f = begp.traverse(pathname, permission, mode, 0);
+        if(f) mode++;
+        // puts("here checking beginning of the path");
+    }
+    if(!f && endf.size()>0){ // ending of filename
+        f = endf.traverse(filename, permission, mode, 1);
+        if(f) mode++;
+        // puts("here checking ending of the filename");
+    }
+    if(!f && endp.size()>0){ // ending of pathname
+        // puts(pathname);
+        f = endp.traverse(pathname, permission, mode, 1);
+        if(f) mode++;
+        // puts("here checking ending of the path");
+    }
+    if(!f && fpaths_regex.size()>0){ // matching regex
+        int v = match_regex(fpaths_regex, pathname);
+        // printf("matching regex %d\n", v);
+
+        if(v>=0){
+            mode = get<2>(fpaths_regex[v])+1;
+            permission = get<1>(fpaths_regex[v]);
+            f = 1;
+        }
+    }
 }
 
 int main(int argc, char *argv[]){
@@ -148,117 +227,110 @@ int main(int argc, char *argv[]){
     printf("\n##########################\nProcess-Activity-Firewall\n##########################\n");
     
     // if(((trie_v *)vector_get(&trie_endp, 4))->leaf == false) puts("hehe");
+
+    int f, mode = !ignore_grps, permission = 0;
     while(1){
         if((cfd = accept(sfd, NULL, NULL)) == -1){
             perror("accept error");
             continue;
         }
 
-        while((nbytes=read(cfd, buf, MAX_BUFFLEN)) > 0) {
+        int done = 0; 
+        bool logged = 0;
+        do {
             // printing the logged buffer
-            json j;
-            try{
-                j = json::parse(buf);
-            }
-            catch(nlohmann::detail::exception err){
-                cerr << err.id << '\n';
-                break;
-            }
-            
-            string pathname = j["params"]["file"]["path"];
-            char filename[MAX_PATHLEN];
-            size_t s;
-            int f = 0, m = 1, mode = !ignore_grps, permission = 0;
-
-            // matching the filepath/filename using the stored config data
-            if(!ignore_grps){
-                const char *basename;
-                size_t l;
-                cwk_path_get_basename(pathname.c_str(), &basename, &l);
-                sprintf(filename, "%.*s", (int)l, basename);
-                // cout << filename << endl;
-                // the other criterias are matched only if the preceding criterias aren't matched
+            if((nbytes=read(cfd, buf, MAX_BUFFLEN)) > 0){
+                json j;
+                try{
+                    j = json::parse(buf);
+                }
+                catch(nlohmann::detail::exception err){
+                    cerr << err.id << '\n';
+                    break;
+                }
                 
-                if(fpaths_abs.size() > 0) { // exact match
-                    int v = find(fpaths_abs, pathname);
-                    if(v >=0 ) {
-                        mode = get<2>(fpaths_abs[v]);
-                        permission = get<1>(fpaths_abs[v]);
-                        f = 1;
+                
+                if(j["path"].is_null() && (permission == 0 || permission == 3)){
+                    size_t s;
+                    // int f = 0, m = 1, mode = !ignore_grps, permission = 0;
+                    int m = 1;
+                    
+                    if (argc == 2){
+                        m = match(buf, argv[1]);
                     }
-                }
-                if(!f && begf.size()>0){ // beginning of pathname
-                    f = begf.traverse(filename, permission, mode, 0);
-                    if(f) mode++;
-                    cout << "checking the beginning of the filename" << f << endl;
-                }
-                if(!f && begp.size()>0){ // beginning of filename
-                    f = begp.traverse(pathname, permission, mode, 0);
-                    if(f) mode++;
-                    puts("here checking beginning of the path");
-                }
-                if(!f && endf.size()>0){ // ending of filename
-                    f = endf.traverse(filename, permission, mode, 1);
-                    if(f) mode++;
-                    puts("here checking ending of the filename");
-                }
-                if(!f && endp.size()>0){ // ending of pathname
-                    // puts(pathname);
-                    f = endp.traverse(pathname, permission, mode, 1);
-                    if(f) mode++;
-                    puts("here checking ending of the path");
-                }
-                if(!f && fpaths_regex.size()>0){ // matching regex
-                    int v = match_regex(fpaths_regex, pathname);
-                    // printf("matching regex %d\n", v);
+                    if(!f) mode = 0;
 
-                    if(v>=0){
-                        mode = get<2>(fpaths_regex[v])+1;
-                        permission = get<1>(fpaths_regex[v]);
-                        f = 1;
+                    // printing according to the matched string's mode (if the filename/path is not matched anywhere, then the info is logged)
+                    switch (mode)
+                    {
+                        case 0:
+                            if(m) {
+                                if(verbose) cout << setw(2) << json::parse(buf) << endl;
+                                fseeko(fp, -4, SEEK_END);
+                                ftruncate(fileno(fp), ftello(fp));
+                                fprintf(fp, ",%s]\n}", buf);
+                            }
+                            break;
+                        case 1:
+                            break;
+                        case 2:
+                            if(m && f) {
+                                if(verbose) cout << setw(2) << json::parse(buf) << endl;
+                                fseeko(fp, -4, SEEK_END);
+                                ftruncate(fileno(fp), ftello(fp));
+                                fprintf(fp, ",%s]\n}", buf);
+                            }
+                            break;
+                        case 3:
+                            if(m && !f) {
+                                if(verbose) cout << setw(2) << json::parse(buf) << endl;
+                                fseeko(fp, -4, SEEK_END);
+                                ftruncate(fileno(fp), ftello(fp));
+                                fprintf(fp, ",%s]\n}", buf);
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                
+                    fflush(fp);
+                    logged = 1;
+                }
+                else if(!j["path"].is_null()){
+                    f = 0; mode = !ignore_grps; permission = 0; logged = 0;
+                    string pathname = j["path"];
+                    pathname = pathname.substr(1, pathname.length()-1);
+
+                    // matching the filepath/filename using the stored config data
+                    if(!ignore_grps){
+                        search_for_match(pathname, f, mode, permission);
+                        // cout << "matching complete " << permission << endl;
                     }
                 }
+            } else{
+                if(nbytes < 0) perror("read");
+                done = 1;
             }
-            if (argc == 2){
-                // printf("matching substring\n");
-                m = match(buf, argv[1]);
+            if(!done){
+                char response[10];
+
+                if(logged) sprintf(response, "logged");
+                else if(permission == 1) sprintf(response, "deny");
+                else sprintf(response, "allow");
+
+                int t = 10;
+                int len = strlen(response);
+                while(t){
+                    if(write(cfd, response, len+1) == len+1){
+                        // printf("writing %lu chars", len);
+                        break;
+                    }
+                    t--;
+                }
             }
-            if(!f) mode = 0;
-            // printing according to the matched string's mode (if the filename/path is not matched anywhere, then the info is logged)
-            switch (mode)
-            {
-                case 0:
-                    if(m) {
-                        if(verbose) cout << setw(2) << json::parse(buf) << endl;
-                        fseeko(fp, -4, SEEK_END);
-                        ftruncate(fileno(fp), ftello(fp));
-                        fprintf(fp, ",%s]\n}", buf);
-                    }
-                    break;
-                case 1:
-                    break;
-                case 2:
-                    if(m && f) {
-                        if(verbose) cout << setw(2) << json::parse(buf) << endl;
-                        fseeko(fp, -4, SEEK_END);
-                        ftruncate(fileno(fp), ftello(fp));
-                        fprintf(fp, ",%s]\n}", buf);
-                    }
-                    break;
-                case 3:
-                    if(m && !f) {
-                        if(verbose) cout << setw(2) << json::parse(buf) << endl;
-                        fseeko(fp, -4, SEEK_END);
-                        ftruncate(fileno(fp), ftello(fp));
-                        fprintf(fp, ",%s]\n}", buf);
-                    }
-                    break;
-                default:
-                    break;
-            }
-        
-            fflush(fp);
-        }
+
+        } while(!done);
+
         close(cfd);
     }
 
