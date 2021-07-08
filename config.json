@@ -2,13 +2,14 @@
     "file_groups": [
         {
             "permission" : [
-                "allow"
+                "allow",
+                "log"
             ],
             "type" : 10,
             "exprs": [
                 "(.*)/dev/pts/(.*)"
             ],
-            "mode": 2
+            "mode": 1
         },
         {
             "permission" : [

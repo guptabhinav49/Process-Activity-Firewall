@@ -123,6 +123,7 @@ int read_config(){
     return 0;
 }
 
+// Here, we search for the matching instance for the filename that is input through the domain socket to this executable
 void search_for_match(string &pathname, int &f, int &mode, int &permission){
     const char *basename;
     char filename[MAX_PATHLEN];
@@ -191,8 +192,6 @@ int main(int argc, char *argv[]){
     struct sockaddr_un addr;
     char buf[MAX_BUFFLEN];
     int sfd, cfd, nbytes;
-
-    // if(((trie_v *)vector_get(&trie_endp, 4))->leaf == false) puts("hehe");
      
     // Creating a server socket, this is where this application listens for incoming log buffers
     if((sfd = socket(AF_UNIX, SOCK_STREAM, 0)) == -1) {
@@ -226,7 +225,6 @@ int main(int argc, char *argv[]){
     // accepting connections from the active sockets
     printf("\n##########################\nProcess-Activity-Firewall\n##########################\n");
     
-    // if(((trie_v *)vector_get(&trie_endp, 4))->leaf == false) puts("hehe");
 
     int f, mode = !ignore_grps, permission = 0;
     while(1){
@@ -252,7 +250,7 @@ int main(int argc, char *argv[]){
                 
                 if(j["path"].is_null() && (permission == 0 || permission == 3)){
                     size_t s;
-                    printf("f: %d, mode: %d, permission: %d, logged: %d", f, mode, permission, logged);
+                    // printf("f: %d, mode: %d, permission: %d, logged: %d", f, mode, permission, logged);
                     cout << endl;
                     int m = 1;
                     
@@ -312,6 +310,7 @@ int main(int argc, char *argv[]){
                 done = 1;
             }
             if(!done){
+                // sending permission (retrieved from the config file) through the domain socket to allow/deny certain function calls
                 char response[10];
 
                 if(logged) sprintf(response, "logged");
@@ -322,7 +321,6 @@ int main(int argc, char *argv[]){
                 int len = strlen(response);
                 while(t){
                     if(write(cfd, response, len+1) == len+1){
-                        // printf("writing %lu chars", len);
                         break;
                     }
                     t--;

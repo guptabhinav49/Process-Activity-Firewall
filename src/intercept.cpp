@@ -120,7 +120,8 @@ int log_to_socket(const char *buf, size_t len, bool get_response, int &perm){
 
     char response[10];
     int nbytes;
-    // std::cout << "awaiting response\n";
+    
+    // retreiving the permission info from the listener, which gets it from the config file
     if((nbytes=orig_read(sfd, response, 10))>0){
         std::string r(response);
         if(r=="deny"){
@@ -133,7 +134,6 @@ int log_to_socket(const char *buf, size_t len, bool get_response, int &perm){
             printf("server connection problem\n");
         }
     }
-    // std::cout << response << std::endl;
 
     orig_close(sfd);
 
@@ -149,8 +149,11 @@ int log_to_socket(const char *buf, size_t len, bool get_response, int &perm){
 int open(const char *pathname, int flags, ...){
     // maintaining the logging info in the character string buf
     char getfrom[50], path[MAX_PATHLEN], temp[100], buf[MAX_BUFFLEN];
+
+    // the permission variable; this variable is passed as reference to log_to_socket() function to retrieve the permission values
     int perm = 0;
 
+    // getting the absolute path from the input arguments
     if(cwk_path_is_relative(pathname)){ 
 
         char base[MAX_PATHLEN];
@@ -165,28 +168,24 @@ int open(const char *pathname, int flags, ...){
     }
     sprintf(buf, "{\"path\": \"%s\"}", path);
 
+    // checking whether we can execute the function call or not (based on the permission values retrieved)
     if(log_to_socket(buf, strlen(buf), 1, perm) != 0){
         perror("logging to socket failed");
     }
+
+    // denying if permission for the current file is 1
     if(perm==1){
         std::cerr << "Permission Error" << std::endl;
         return -1;
     }
+
     // fetching, and then calling the original open
     orig_open_type orig_open;
     orig_open = (orig_open_type)dlsym(RTLD_NEXT, "open");
     int fd  = orig_open(pathname, flags);
-
-    // sprintf(getfrom, "/proc/self/fd/%d", fd);
-    // ssize_t nbytes = readlink(getfrom, path, MAX_PATHLEN);
     
     // adding the parameter values to the buffer
     sprintf(buf, "{\n\t\t\"function\": \"open\",\n\t\t\"params\": {\"file\": {\"path\": \"%s\", \"fd\": %d}, \"flags\": %d},\n", path, fd, flags);
-
-    // if(nbytes == MAX_PATHLEN){
-    //     sprintf(temp, "\t\t\"error\": \"file path may have been truncated\"\n");
-    //     strncat(buf, temp, sizeof(temp));
-    // }
 
     // getting the open mode of the file
     int mode = 0;
@@ -207,7 +206,9 @@ int open(const char *pathname, int flags, ...){
 
 ssize_t write(int fd, const void *buffer, size_t count){
 
+    // the permission variable; this variable is passed as reference to log_to_socket() function to retrieve the permission values
     int perm = 0;
+
     // setting the getfrom string to get the path from the file descriptor
     char getfrom[50], path[MAX_PATHLEN], temp[100], buf[MAX_BUFFLEN];
     sprintf(getfrom, "/proc/self/fd/%d", fd);
@@ -216,9 +217,12 @@ ssize_t write(int fd, const void *buffer, size_t count){
 
     sprintf(buf, "{\"path\": \"%.*s\"}", (int)nbytes, path);
 
+    // checking whether we can execute the function call or not (based on the permission values retrieved)
     if(log_to_socket(buf, strlen(buf), 1, perm) != 0){
         perror("logging to socket failed");
     }
+
+    // denying the execution if the permission value is 1
     if(perm==1){
         std::cerr << "Permission Error" << std::endl;
         return -1;
@@ -253,7 +257,10 @@ ssize_t write(int fd, const void *buffer, size_t count){
 }
 
 ssize_t read(int fd, void *buffer, size_t count){
+
+    // the permission variable; this variable is passed as reference to log_to_socket() function to retrieve the permission values
     int perm = 0;
+
     // get_metadata();
     // setting getfrom string to get the path from the file descriptor
     char getfrom[50], path[MAX_PATHLEN], temp[100], buf[MAX_BUFFLEN];
@@ -263,9 +270,12 @@ ssize_t read(int fd, void *buffer, size_t count){
 
     sprintf(buf, "{\"path\": \"%.*s\"}", (int)nbytes, path);;
 
+    // checking whether we can execute the function call or not (based on the permission values retrieved)
     if(log_to_socket(buf, strlen(buf), 1, perm) != 0){
         perror("logging to socket failed");
     }
+
+    // denying the execution if the permission value is 1
     if(perm==1){
         std::cerr << "Permission Error" << std::endl;
         return -1;
@@ -297,7 +307,10 @@ ssize_t read(int fd, void *buffer, size_t count){
 }
 
 int close(int fd){
+
+    // the permission variable; this variable is passed as reference to log_to_socket() function to retrieve the permission values
     int perm = 0;
+
     // setting getfrom string to get the path from the file descriptor
     char getfrom[50], path[MAX_PATHLEN], buf[MAX_BUFFLEN], temp[100];
     sprintf(getfrom, "/proc/self/fd/%d", fd);
@@ -306,9 +319,12 @@ int close(int fd){
 
     sprintf(buf, "{\"path\": \"%.*s\"}", (int)nbytes, path);
 
+    // checking whether we can execute the function call or not (based on the permission values retrieved)
     if(log_to_socket(buf, strlen(buf), 1, perm) != 0){
         perror("logging to socket failed");
     }
+
+    // denying permission if the permission value is 1
     if(perm==1){
         std::cerr << "Permission Error" << std::endl;
         return -1;

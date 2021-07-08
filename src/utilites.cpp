@@ -75,6 +75,10 @@ int match(char a[], const char sub[]){
     return ans;
 }
 
+
+/*
+    basic print funtions for the data structures
+*/
 void out(std::vector<std::tuple<std::string,int,int> > &fpaths){
     std::cout << "ABSOLUTE MATCHING" << std::endl;
     for(auto i : fpaths){
