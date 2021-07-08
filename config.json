@@ -1,17 +1,22 @@
 {
     "file_groups": [
         {
-            "type" : 11,
+            "permission" : [
+                "allow",
+                "log"
+            ],
+            "type" : 10,
             "exprs": [
-                "((ba(na)*)+)",
-                "(repos)+"
+                "(.*)/dev/pts/(.*)"
             ],
             "mode": 1
         },
         {
-            "type" : 30,
+            "permission" : [
+                "deny"
+            ],
+            "type" : 21,
             "exprs": [
-                "ab",
                 "banana"
             ],
             "mode": 2
