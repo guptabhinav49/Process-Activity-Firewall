@@ -39,7 +39,7 @@ We have four config settings currently that can be set according the user's pref
 4. ``logfile_path``: This sets the path for the file where the logs will be writtten in JSON format.
 
 ### External libraries used:
-- [lwjson](https://github.com/MaJerle/lwjson/tree/master) to parse JSON files.
+- [json](https://github.com/nlohmann/json) by nlohmann to parse JSON files.
 - [cwalk](https://github.com/likle/cwalk) to parse paths.
 - Vector implementation from [here](https://www.sanfoundry.com/c-program-implement-vector/).
 - Trie implementation based on _C++_ implementation given [here](https://cp-algorithms.com/string/aho_corasick.html).
