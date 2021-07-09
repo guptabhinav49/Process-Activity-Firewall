@@ -2,7 +2,7 @@
 
 ### Steps to use the library:
 
-1. Clone the repository and make sure you have CMake installed (version 3.20.3 or above).
+1. Clone the repository and make sure you have CMake installed (version 3.10 or above).
 2. Make a dir _build_ in the root directory and navigate into it using ``mkdir build && cd build``. Then finally issue ``cmake ../ && cmake --build .`` to compile the executables.
 3. Load the library by issuing the command: ``export LD_PRELOAD=$PWD/src/libintercept.so``.
 4. Run ``./src/listener`` in another shell, all the intercept logs will be displayed here.
