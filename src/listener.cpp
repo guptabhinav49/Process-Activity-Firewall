@@ -11,6 +11,7 @@ string logfile_path;
 
 //storing (string, permission, mode)
 vector<tuple<string,int,int> > fpaths_abs;
+
 // storing (regex, permission, logmode, type(filename/path))
 vector<tuple<string,int,int,int> > fpaths_regex;
 Trie begp, begf, endp, endf;
@@ -251,11 +252,12 @@ int main(int argc, char *argv[]){
                 if(j["path"].is_null() && (permission == 0 || permission == 3)){
                     size_t s;
                     // printf("f: %d, mode: %d, permission: %d, logged: %d", f, mode, permission, logged);
-                    cout << endl;
+                    // cout << endl;
                     int m = 1;
                     
                     if (argc == 2){
                         m = match(buf, argv[1]);
+                        // cout << mode << ' ' << m << "" << argv[1] << endl;
                     }
                     if(!f) mode = 0;
 
@@ -302,7 +304,6 @@ int main(int argc, char *argv[]){
                     // matching the filepath/filename using the stored config data
                     if(!ignore_grps){
                         search_for_match(pathname, f, mode, permission);
-                        // cout << "matching complete " << permission << endl;
                     }
                 }
             } else{
@@ -310,7 +311,7 @@ int main(int argc, char *argv[]){
                 done = 1;
             }
             if(!done){
-                // sending permission (retrieved from the config file) through the domain socket to allow/deny certain function calls
+                // sending permission (retrieved from the config file) through the domain socket to allow/deny function calls to matched files
                 char response[10];
 
                 if(logged) sprintf(response, "logged");

@@ -2,19 +2,29 @@
 #include <headers.hpp>
 #include <cwalk/cwalk.h>
 
-// typedef int (*orig_open2_type)(const char *pathname, int flags);
+/*****OPEN*****/
 typedef int (*orig_open_type)(const char *pathname, int flags, ...);
+/*****READ*****/
 typedef ssize_t (*orig_read_type)(int fd, void *buf, size_t count);
+/*****WRITE*****/
 typedef ssize_t (*orig_write_type)(int fd, const void *buf, size_t count);
+/*****EXECV*****/
+typedef int (*orig_execv_type)(const char* pathname, char *const argv[], char *const envp[]);
+/*****SYSTEM*****/
+typedef int (*orig_system_type)(const char *command);
+/*****POPEN*****/
+typedef FILE *(*orig_popen_type)(const char *command, const char *type);  
+/*****CLOSE*****/
 typedef int (*orig_close_type)(int fd);
 
-/*
+/***************
     cmd: 
         open() -> 0
         write() -> 1
         read() -> 2
         close() -> 3
-*/
+
+***************/
 const char* get_metadata(int cmd, int *bytes, int *mode){
     // getting the original functions
     orig_open_type orig_open;
@@ -144,6 +154,156 @@ int log_to_socket(const char *buf, size_t len, bool get_response, int &perm){
     }
 
     return 0;
+}
+
+std::string get_absolute_path(const char* pathname){
+    char path[MAX_PATHLEN];
+
+    if(cwk_path_is_relative(pathname)){ 
+
+        char base[MAX_PATHLEN];
+        if(getcwd(base, sizeof(base)) == NULL){
+            perror("getcwd() error");
+            return "";
+        }
+        cwk_path_get_absolute(base, pathname, path, sizeof(path));
+    }
+    else{
+        sprintf(path, "%s", pathname);
+    }
+
+    return std::string(path);
+}
+
+int execv(const char *pathname, char *const argv[], char *const envp[]){
+    orig_execv_type orig_execv;
+    orig_execv = (orig_execv_type)dlsym(RTLD_NEXT, "execv");
+
+    // maintaining the logging info in the character string buf
+    char getfrom[50], temp[100], buf[MAX_BUFFLEN];
+    // the permission variable; this variable is passed as reference to log_to_socket() function to retrieve the permission values
+    int perm = 0;
+
+    // getting the absolute path from the input arguments
+    std::string path = get_absolute_path(pathname);
+    sprintf(buf, "{\"path\": \"%s\"}", path.c_str());
+
+    // checking whether we can execute the function call or not (based on the permission values retrieved)
+    if(log_to_socket(buf, strlen(buf), 1, perm) != 0){
+        perror("logging to socket failed");
+    }
+
+    // denying if permission for the current file is 1
+    if(perm==1){
+        std::cerr << "Permission Error" << std::endl;
+        return -1;
+    }
+
+    sprintf(buf, "{\n\t\t\"function\": \"execv\",\n\t\t\"params\": {\"pathname\": \"%s\"},\n", path.c_str());
+    
+    // concatenating the metadata for the open() call
+    const char *meta = get_metadata(0, NULL, NULL);
+    strncat(buf, meta, strlen(meta));
+    strncat(buf, "\t}\n", 4);
+
+    // logging the info to the UNIX domain socket
+    if(log_to_socket(buf, strlen(buf), 0 , perm) != 0){
+        perror("logging to socket failed");
+    }
+
+    return orig_execv(pathname, argv, envp);
+}
+
+FILE *popen(const char *command, const char* type){
+    orig_popen_type orig_popen;
+    orig_popen = (orig_popen_type)dlsym(RTLD_NEXT, "popen");
+
+    std::string cmd(command), exe;
+    exe = cmd;
+
+    for(int i=0; i<cmd.length(); i++){
+        if(cmd[i]==' '){
+            exe = cmd.substr(0,i);
+            cmd = exe + cmd.substr(i+1);
+            break;
+        }
+    }
+    std::string abs_exe = get_absolute_path(exe.c_str());
+    
+    char buf[MAX_BUFFLEN];
+    int perm = 0;
+    sprintf(buf, "{\"path\": \"%s\"}", abs_exe.c_str());
+
+    // checking whether we can execute the function call or not (based on the permission values retrieved)
+    if(log_to_socket(buf, strlen(buf), 1, perm) != 0){
+        perror("logging to socket failed");
+    }
+
+    // denying if permission for the current file is 1
+    if(perm==1){
+        std::cerr << "Permission Error" << std::endl;
+        return NULL;
+    }
+
+    sprintf(buf, "{\n\t\t\"function\": \"popen\",\n\t\t\"params\": {\"command\": \"%s\", \"type\": \"%s\"},\n", cmd.c_str(), type);
+    
+    // concatenating the metadata for the open() call
+    const char *meta = get_metadata(0, NULL, NULL);
+    strncat(buf, meta, strlen(meta));
+    strncat(buf, "\t}\n", 4);
+
+    // logging the info to the UNIX domain socket
+    if(log_to_socket(buf, strlen(buf), 0 , perm) != 0){
+        perror("logging to socket failed");
+    }
+    
+    return orig_popen(command, type);
+}
+
+int system(const char *command){
+    orig_system_type orig_system;
+    orig_system = (orig_system_type)dlsym(RTLD_NEXT, "system");
+
+    std::string cmd(command), exe;
+    exe = cmd;
+
+    for(int i=0; i<cmd.length(); i++){
+        if(cmd[i]==' '){
+            exe = cmd.substr(0,i);
+            cmd = exe + cmd.substr(i+1);
+            break;
+        }
+    }
+    std::string abs_exe = get_absolute_path(exe.c_str());
+    
+    char buf[MAX_BUFFLEN];
+    int perm = 0;
+    sprintf(buf, "{\"path\": \"%s\"}", abs_exe.c_str());
+
+    // checking whether we can execute the function call or not (based on the permission values retrieved)
+    if(log_to_socket(buf, strlen(buf), 1, perm) != 0){
+        perror("logging to socket failed");
+    }
+
+    // denying if permission for the current file is 1
+    if(perm==1){
+        std::cerr << "Permission Error" << std::endl;
+        return -1;
+    }
+
+    sprintf(buf, "{\n\t\t\"function\": \"system\",\n\t\t\"params\": {\"command\": \"%s\"},\n", cmd.c_str());
+    
+    // concatenating the metadata for the open() call
+    const char *meta = get_metadata(0, NULL, NULL);
+    strncat(buf, meta, strlen(meta));
+    strncat(buf, "\t}\n", 4);
+
+    // logging the info to the UNIX domain socket
+    if(log_to_socket(buf, strlen(buf), 0 , perm) != 0){
+        perror("logging to socket failed");
+    }
+
+    return orig_system(command);
 }
 
 int open(const char *pathname, int flags, ...){

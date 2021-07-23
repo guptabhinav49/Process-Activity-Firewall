@@ -24,31 +24,1639 @@
         }
 
     ],
-    "ignore_groups": false,
+    "ignore_groups": true,
     "verbose": true,
     "logfile_path": "../logs.json"
 },
 "logs": [
 	{},{
-		"function": "open",
-		"params": {"file": {"path": "/home/lonewolf/repos/Process-Activity-Firewall/build/ab", "fd": 3}, "flags": 0},
-		"metadata": {"PID": 94936, "PPID": 65427, "EXE_PATH": "/usr/bin/cat", "CMD": "cat ab", "MODE": "100000"}
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/encodings/__pycache__/__init__.cpython-36.pyc", "fd": 5}, "buff": "0x1cae860", "count": 3931},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 3930}
 	},{
 		"function": "read",
-		"params": {"file": {"path": "/home/lonewolf/repos/Process-Activity-Firewall/build/ab", "fd": 3}, "buff": "0x7fc0d3f68000", "count": 131072},
-		"metadata": {"PID": 94936, "PPID": 65427, "EXE_PATH": "/usr/bin/cat", "CMD": "cat ab", "BYTES_READ": 4}
-	},{
-		"function": "write",
-		"params": {"file": {"path": "/dev/pts/2", "fd": 1}, "buff": "0x7fc0d3f68000", "count": 4},
-		"metadata": {"PID": 94936, "PPID": 65427, "EXE_PATH": "/usr/bin/cat", "CMD": "cat ab", "BYTES_WRITTEN": 4}
-	},{
-		"function": "read",
-		"params": {"file": {"path": "/home/lonewolf/repos/Process-Activity-Firewall/build/ab", "fd": 3}, "buff": "0x7fc0d3f68000", "count": 131072},
-		"metadata": {"PID": 94936, "PPID": 65427, "EXE_PATH": "/usr/bin/cat", "CMD": "cat ab", "BYTES_READ": 0}
+		"params": {"file": {"path": "/usr/lib/python3.6/encodings/__pycache__/__init__.cpython-36.pyc", "fd": 5}, "buff": "0x1caf7ba", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
 	},{
 		"function": "close",
-		"params": {"file": {"path": "/home/lonewolf/repos/Process-Activity-Firewall/build/ab", "fd": 3} },
-		"metadata": {"PID": 94936, "PPID": 65427, "EXE_PATH": "/usr/bin/cat", "CMD": "cat ab"}
+		"params": {"file": {"path": "/usr/lib/python3.6/encodings/__pycache__/__init__.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/codecs.cpython-36.pyc", "fd": 5}, "buff": "0x1cd5890", "count": 33901},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 33900}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/codecs.cpython-36.pyc", "fd": 5}, "buff": "0x1cddcfc", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/codecs.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/encodings/__pycache__/aliases.cpython-36.pyc", "fd": 5}, "buff": "0x1cdef20", "count": 6275},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 6274}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/encodings/__pycache__/aliases.cpython-36.pyc", "fd": 5}, "buff": "0x1ce07a2", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/encodings/__pycache__/aliases.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/encodings/__pycache__/utf_8.cpython-36.pyc", "fd": 5}, "buff": "0x1ce1220", "count": 1593},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 1592}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/encodings/__pycache__/utf_8.cpython-36.pyc", "fd": 5}, "buff": "0x1ce1858", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/encodings/__pycache__/utf_8.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/encodings/__pycache__/latin_1.cpython-36.pyc", "fd": 5}, "buff": "0x1ce45e0", "count": 1875},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 1874}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/encodings/__pycache__/latin_1.cpython-36.pyc", "fd": 5}, "buff": "0x1ce4d32", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/encodings/__pycache__/latin_1.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/io.cpython-36.pyc", "fd": 5}, "buff": "0x1ceb040", "count": 3388},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 3387}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/io.cpython-36.pyc", "fd": 5}, "buff": "0x1cebd7b", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/io.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/abc.cpython-36.pyc", "fd": 5}, "buff": "0x1cedd40", "count": 7516},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 7515}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/abc.cpython-36.pyc", "fd": 5}, "buff": "0x1cefa9b", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/abc.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/_weakrefset.cpython-36.pyc", "fd": 5}, "buff": "0x1cee1d0", "count": 7829},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 7828}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/_weakrefset.cpython-36.pyc", "fd": 5}, "buff": "0x1cf0064", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/_weakrefset.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/dev/pts/3", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/dev/pts/3", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/dev/pts/3", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/site.cpython-36.pyc", "fd": 5}, "buff": "0x1cf5ca0", "count": 16561},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 16560}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/site.cpython-36.pyc", "fd": 5}, "buff": "0x1cf9d50", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/site.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/os.cpython-36.pyc", "fd": 5}, "buff": "0x1cff7a0", "count": 29629},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 29628}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/os.cpython-36.pyc", "fd": 5}, "buff": "0x1d06b5c", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/os.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/stat.cpython-36.pyc", "fd": 5}, "buff": "0x1d009c0", "count": 3852},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 3851}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/stat.cpython-36.pyc", "fd": 5}, "buff": "0x1d018cb", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/stat.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/posixpath.cpython-36.pyc", "fd": 5}, "buff": "0x1d08c90", "count": 10424},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 10423}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/posixpath.cpython-36.pyc", "fd": 5}, "buff": "0x1d0b547", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/posixpath.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/genericpath.cpython-36.pyc", "fd": 5}, "buff": "0x1d056f0", "count": 3727},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 3726}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/genericpath.cpython-36.pyc", "fd": 5}, "buff": "0x1d0657e", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/genericpath.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/_collections_abc.cpython-36.pyc", "fd": 5}, "buff": "0x1d0aa40", "count": 28798},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 28797}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/_collections_abc.cpython-36.pyc", "fd": 5}, "buff": "0x1d11abd", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/_collections_abc.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/_sitebuiltins.cpython-36.pyc", "fd": 5}, "buff": "0x1d06860", "count": 3436},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 3435}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/_sitebuiltins.cpython-36.pyc", "fd": 5}, "buff": "0x1d075cb", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/_sitebuiltins.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/sysconfig.cpython-36.pyc", "fd": 5}, "buff": "0x1cbf8c0", "count": 15917},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 15916}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/sysconfig.cpython-36.pyc", "fd": 5}, "buff": "0x1cc36ec", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/sysconfig.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/_sysconfigdata_m_linux_x86_64-linux-gnu.cpython-36.pyc", "fd": 5}, "buff": "0x1cc1060", "count": 18780},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 18779}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/_sysconfigdata_m_linux_x86_64-linux-gnu.cpython-36.pyc", "fd": 5}, "buff": "0x1cc59bb", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/_sysconfigdata_m_linux_x86_64-linux-gnu.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/_bootlocale.cpython-36.pyc", "fd": 6}, "buff": "0x1d02830", "count": 981},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 980}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/_bootlocale.cpython-36.pyc", "fd": 6}, "buff": "0x1d02c04", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/_bootlocale.cpython-36.pyc", "fd": 6} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3/dist-packages/zope.interface-4.3.2-nspkg.pth", "fd": 5}, "buff": "0x1ccf750", "count": 8192},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 529}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/types.cpython-36.pyc", "fd": 6}, "buff": "0x1d2d3b0", "count": 8202},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 8201}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/types.cpython-36.pyc", "fd": 6}, "buff": "0x1d2f3b9", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/types.cpython-36.pyc", "fd": 6} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/functools.cpython-36.pyc", "fd": 6}, "buff": "0x1d355f0", "count": 24063},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 24062}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/functools.cpython-36.pyc", "fd": 6}, "buff": "0x1d3b3ee", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/functools.cpython-36.pyc", "fd": 6} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/collections/__pycache__/__init__.cpython-36.pyc", "fd": 6}, "buff": "0x1d355f0", "count": 45817},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 45816}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/collections/__pycache__/__init__.cpython-36.pyc", "fd": 6}, "buff": "0x1d408e8", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/collections/__pycache__/__init__.cpython-36.pyc", "fd": 6} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/operator.cpython-36.pyc", "fd": 6}, "buff": "0x1d35a50", "count": 13914},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 13913}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/operator.cpython-36.pyc", "fd": 6}, "buff": "0x1d390a9", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/operator.cpython-36.pyc", "fd": 6} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/keyword.cpython-36.pyc", "fd": 6}, "buff": "0x1d361c0", "count": 1766},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 1765}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/keyword.cpython-36.pyc", "fd": 6}, "buff": "0x1d368a5", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/keyword.cpython-36.pyc", "fd": 6} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/heapq.cpython-36.pyc", "fd": 6}, "buff": "0x1d3dbc0", "count": 14293},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 14292}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/heapq.cpython-36.pyc", "fd": 6}, "buff": "0x1d41394", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/heapq.cpython-36.pyc", "fd": 6} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/reprlib.cpython-36.pyc", "fd": 6}, "buff": "0x1d3dbc0", "count": 5401},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 5400}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/reprlib.cpython-36.pyc", "fd": 6}, "buff": "0x1d3f0d8", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/reprlib.cpython-36.pyc", "fd": 6} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/weakref.cpython-36.pyc", "fd": 6}, "buff": "0x1d4bbf0", "count": 19144},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 19143}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/weakref.cpython-36.pyc", "fd": 6}, "buff": "0x1d506b7", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/weakref.cpython-36.pyc", "fd": 6} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/collections/__pycache__/abc.cpython-36.pyc", "fd": 6}, "buff": "0x7f28748a2c90", "count": 184},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 183}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/collections/__pycache__/abc.cpython-36.pyc", "fd": 6}, "buff": "0x7f28748a2d47", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/collections/__pycache__/abc.cpython-36.pyc", "fd": 6} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/importlib/__pycache__/__init__.cpython-36.pyc", "fd": 6}, "buff": "0x1d4d880", "count": 3601},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 3600}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/importlib/__pycache__/__init__.cpython-36.pyc", "fd": 6}, "buff": "0x1d4e690", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/importlib/__pycache__/__init__.cpython-36.pyc", "fd": 6} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/warnings.cpython-36.pyc", "fd": 6}, "buff": "0x1d52900", "count": 13259},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 13258}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/warnings.cpython-36.pyc", "fd": 6}, "buff": "0x1d55cca", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/warnings.cpython-36.pyc", "fd": 6} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/importlib/__pycache__/util.cpython-36.pyc", "fd": 6}, "buff": "0x1d53f70", "count": 8901},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 8900}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/importlib/__pycache__/util.cpython-36.pyc", "fd": 6}, "buff": "0x1d56234", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/importlib/__pycache__/util.cpython-36.pyc", "fd": 6} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/importlib/__pycache__/abc.cpython-36.pyc", "fd": 6}, "buff": "0x1d59470", "count": 11294},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 11293}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/importlib/__pycache__/abc.cpython-36.pyc", "fd": 6}, "buff": "0x1d5c08d", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/importlib/__pycache__/abc.cpython-36.pyc", "fd": 6} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/importlib/__pycache__/machinery.cpython-36.pyc", "fd": 6}, "buff": "0x1d07ca0", "count": 951},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 950}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/importlib/__pycache__/machinery.cpython-36.pyc", "fd": 6}, "buff": "0x1d08056", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/importlib/__pycache__/machinery.cpython-36.pyc", "fd": 6} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/contextlib.cpython-36.pyc", "fd": 6}, "buff": "0x1d5a3e0", "count": 11159},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 11158}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/contextlib.cpython-36.pyc", "fd": 6}, "buff": "0x1d5cf76", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/contextlib.cpython-36.pyc", "fd": 6} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3/dist-packages/zope.interface-4.3.2-nspkg.pth", "fd": 5}, "buff": "0x1d1a2f0", "count": 8192},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3/dist-packages/zope.interface-4.3.2-nspkg.pth", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/sitecustomize.cpython-36.pyc", "fd": 5}, "buff": "0x7f2874aa5a00", "count": 213},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 212}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/sitecustomize.cpython-36.pyc", "fd": 5}, "buff": "0x7f2874aa5ad4", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/sitecustomize.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3/dist-packages/__pycache__/apport_python_hook.cpython-36.pyc", "fd": 5}, "buff": "0x1d1ab00", "count": 4228},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 4227}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3/dist-packages/__pycache__/apport_python_hook.cpython-36.pyc", "fd": 5}, "buff": "0x1d1bb83", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3/dist-packages/__pycache__/apport_python_hook.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/__future__.cpython-36.pyc", "fd": 5}, "buff": "0x1d67890", "count": 4168},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 4167}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/__future__.cpython-36.pyc", "fd": 5}, "buff": "0x1d688d7", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/__future__.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/gettext.cpython-36.pyc", "fd": 5}, "buff": "0x1d6ac50", "count": 14307},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 14306}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/gettext.cpython-36.pyc", "fd": 5}, "buff": "0x1d6e432", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/gettext.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/locale.cpython-36.pyc", "fd": 5}, "buff": "0x1d71fd0", "count": 34031},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 34030}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/locale.cpython-36.pyc", "fd": 5}, "buff": "0x1d7a4be", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/locale.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/re.cpython-36.pyc", "fd": 5}, "buff": "0x1d73460", "count": 14059},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 14058}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/re.cpython-36.pyc", "fd": 5}, "buff": "0x1d76b4a", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/re.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/enum.cpython-36.pyc", "fd": 5}, "buff": "0x1d73460", "count": 23454},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 23453}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/enum.cpython-36.pyc", "fd": 5}, "buff": "0x1d78ffd", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/enum.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/sre_compile.cpython-36.pyc", "fd": 5}, "buff": "0x1d750c0", "count": 10279},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 10278}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/sre_compile.cpython-36.pyc", "fd": 5}, "buff": "0x1d778e6", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/sre_compile.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/sre_parse.cpython-36.pyc", "fd": 5}, "buff": "0x1d7eac0", "count": 20359},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 20358}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/sre_parse.cpython-36.pyc", "fd": 5}, "buff": "0x1d83a46", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/sre_parse.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/sre_constants.cpython-36.pyc", "fd": 5}, "buff": "0x1d7eac0", "count": 5973},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 5972}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/sre_constants.cpython-36.pyc", "fd": 5}, "buff": "0x1d80214", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/sre_constants.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/copyreg.cpython-36.pyc", "fd": 5}, "buff": "0x1d8a030", "count": 4245},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 4244}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/copyreg.cpython-36.pyc", "fd": 5}, "buff": "0x1d8b0c4", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/copyreg.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/copy.cpython-36.pyc", "fd": 5}, "buff": "0x1d6ac50", "count": 7080},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 7079}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/copy.cpython-36.pyc", "fd": 5}, "buff": "0x1d6c7f7", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/copy.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/struct.cpython-36.pyc", "fd": 5}, "buff": "0x7f2874783050", "count": 313},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 312}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/struct.cpython-36.pyc", "fd": 5}, "buff": "0x7f2874783188", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/struct.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/optparse.cpython-36.pyc", "fd": 5}, "buff": "0x1d97da0", "count": 48055},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 48054}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/optparse.cpython-36.pyc", "fd": 5}, "buff": "0x1da3956", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/optparse.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/textwrap.cpython-36.pyc", "fd": 5}, "buff": "0x1da41a0", "count": 13685},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 13684}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/textwrap.cpython-36.pyc", "fd": 5}, "buff": "0x1da7714", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/textwrap.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3/dist-packages/CommandNotFound/__pycache__/__init__.cpython-36.pyc", "fd": 5}, "buff": "0x7f28748b8c18", "count": 192},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 191}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3/dist-packages/CommandNotFound/__pycache__/__init__.cpython-36.pyc", "fd": 5}, "buff": "0x7f28748b8cd7", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3/dist-packages/CommandNotFound/__pycache__/__init__.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3/dist-packages/CommandNotFound/__pycache__/util.cpython-36.pyc", "fd": 5}, "buff": "0x1d98de0", "count": 1453},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 1452}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3/dist-packages/CommandNotFound/__pycache__/util.cpython-36.pyc", "fd": 5}, "buff": "0x1d9938c", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3/dist-packages/CommandNotFound/__pycache__/util.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3/dist-packages/CommandNotFound/__pycache__/CommandNotFound.cpython-36.pyc", "fd": 5}, "buff": "0x1d99ff0", "count": 13632},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 13631}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3/dist-packages/CommandNotFound/__pycache__/CommandNotFound.cpython-36.pyc", "fd": 5}, "buff": "0x1d9d52f", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3/dist-packages/CommandNotFound/__pycache__/CommandNotFound.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/json/__pycache__/__init__.cpython-36.pyc", "fd": 5}, "buff": "0x1d99ff0", "count": 12642},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 12641}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/json/__pycache__/__init__.cpython-36.pyc", "fd": 5}, "buff": "0x1d9d151", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/json/__pycache__/__init__.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/json/__pycache__/decoder.cpython-36.pyc", "fd": 5}, "buff": "0x1d9dd80", "count": 9956},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 9955}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/json/__pycache__/decoder.cpython-36.pyc", "fd": 5}, "buff": "0x1da0463", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/json/__pycache__/decoder.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/json/__pycache__/scanner.cpython-36.pyc", "fd": 5}, "buff": "0x1d9dd80", "count": 1971},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 1970}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/json/__pycache__/scanner.cpython-36.pyc", "fd": 5}, "buff": "0x1d9e532", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/json/__pycache__/scanner.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/json/__pycache__/encoder.cpython-36.pyc", "fd": 5}, "buff": "0x1db61f0", "count": 11258},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 11257}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/json/__pycache__/encoder.cpython-36.pyc", "fd": 5}, "buff": "0x1db8de9", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/json/__pycache__/encoder.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/logging/__pycache__/__init__.cpython-36.pyc", "fd": 5}, "buff": "0x1db82f0", "count": 60396},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 60395}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/logging/__pycache__/__init__.cpython-36.pyc", "fd": 5}, "buff": "0x1dc6edb", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/logging/__pycache__/__init__.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/traceback.cpython-36.pyc", "fd": 5}, "buff": "0x1dc8400", "count": 19647},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 19646}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/traceback.cpython-36.pyc", "fd": 5}, "buff": "0x1dcd0be", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/traceback.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/linecache.cpython-36.pyc", "fd": 5}, "buff": "0x1dd3e50", "count": 3779},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 3778}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/linecache.cpython-36.pyc", "fd": 5}, "buff": "0x1dd4d12", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/linecache.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/tokenize.cpython-36.pyc", "fd": 5}, "buff": "0x1dcdd20", "count": 18648},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 18647}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/tokenize.cpython-36.pyc", "fd": 5}, "buff": "0x1dd25f7", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/tokenize.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/token.cpython-36.pyc", "fd": 5}, "buff": "0x1dc8400", "count": 3321},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 3320}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/token.cpython-36.pyc", "fd": 5}, "buff": "0x1dc90f8", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/token.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/string.cpython-36.pyc", "fd": 5}, "buff": "0x1dbcf40", "count": 7965},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 7964}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/string.cpython-36.pyc", "fd": 5}, "buff": "0x1dbee5c", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/string.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/threading.cpython-36.pyc", "fd": 5}, "buff": "0x1dd9af0", "count": 37235},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 37234}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/threading.cpython-36.pyc", "fd": 5}, "buff": "0x1de2c62", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/threading.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/subprocess.cpython-36.pyc", "fd": 5}, "buff": "0x1de02f0", "count": 35486},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 35485}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/subprocess.cpython-36.pyc", "fd": 5}, "buff": "0x1de8d8d", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/subprocess.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/signal.cpython-36.pyc", "fd": 5}, "buff": "0x1de02f0", "count": 2516},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 2515}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/signal.cpython-36.pyc", "fd": 5}, "buff": "0x1de0cc3", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/signal.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/selectors.cpython-36.pyc", "fd": 5}, "buff": "0x1de58d0", "count": 17698},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 17697}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/selectors.cpython-36.pyc", "fd": 5}, "buff": "0x1de9df1", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/selectors.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3/dist-packages/CommandNotFound/db/__pycache__/__init__.cpython-36.pyc", "fd": 5}, "buff": "0x7f2874502308", "count": 195},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 194}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3/dist-packages/CommandNotFound/db/__pycache__/__init__.cpython-36.pyc", "fd": 5}, "buff": "0x7f28745023ca", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3/dist-packages/CommandNotFound/db/__pycache__/__init__.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3/dist-packages/CommandNotFound/db/__pycache__/db.cpython-36.pyc", "fd": 5}, "buff": "0x1de6a30", "count": 1151},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 1150}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3/dist-packages/CommandNotFound/db/__pycache__/db.cpython-36.pyc", "fd": 5}, "buff": "0x1de6eae", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3/dist-packages/CommandNotFound/db/__pycache__/db.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/sqlite3/__pycache__/__init__.cpython-36.pyc", "fd": 5}, "buff": "0x7f28745467d0", "count": 153},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 152}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/sqlite3/__pycache__/__init__.cpython-36.pyc", "fd": 5}, "buff": "0x7f2874546868", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/sqlite3/__pycache__/__init__.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/sqlite3/__pycache__/dbapi2.cpython-36.pyc", "fd": 5}, "buff": "0x1de8330", "count": 2472},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 2471}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/sqlite3/__pycache__/dbapi2.cpython-36.pyc", "fd": 5}, "buff": "0x1de8cd7", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/sqlite3/__pycache__/dbapi2.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/datetime.cpython-36.pyc", "fd": 5}, "buff": "0x1df35d0", "count": 54512},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 54511}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/datetime.cpython-36.pyc", "fd": 5}, "buff": "0x1e00abf", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/datetime.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "open",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/01-vendor-ubuntu", "fd": 5}, "flags": 524544},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "MODE": "100000"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/01-vendor-ubuntu", "fd": 5}, "buff": "0x1dff7c0", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 42}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/01-vendor-ubuntu", "fd": 5}, "buff": "0x1dff7ea", "count": 4054},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/01-vendor-ubuntu", "fd": 5}, "buff": "0x1dff7c0", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/01-vendor-ubuntu", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "open",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/01autoremove", "fd": 5}, "flags": 524544},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "MODE": "100000"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/01autoremove", "fd": 5}, "buff": "0x1e10c20", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 1018}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/01autoremove", "fd": 5}, "buff": "0x1e1101a", "count": 3078},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/01autoremove", "fd": 5}, "buff": "0x1e10c20", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/01autoremove", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "open",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/01autoremove-kernels", "fd": 5}, "flags": 524544},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "MODE": "100000"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/01autoremove-kernels", "fd": 5}, "buff": "0x1e12040", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 1576}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/01autoremove-kernels", "fd": 5}, "buff": "0x1e12668", "count": 2520},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/01autoremove-kernels", "fd": 5}, "buff": "0x1e12040", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/01autoremove-kernels", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "open",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/10periodic", "fd": 5}, "flags": 524544},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "MODE": "100000"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/10periodic", "fd": 5}, "buff": "0x1e14270", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 129}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/10periodic", "fd": 5}, "buff": "0x1e142f1", "count": 3967},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/10periodic", "fd": 5}, "buff": "0x1e14270", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/10periodic", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "open",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/15update-stamp", "fd": 5}, "flags": 524544},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "MODE": "100000"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/15update-stamp", "fd": 5}, "buff": "0x1e15aa0", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 108}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/15update-stamp", "fd": 5}, "buff": "0x1e15b0c", "count": 3988},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/15update-stamp", "fd": 5}, "buff": "0x1e15aa0", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/15update-stamp", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "open",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/20archive", "fd": 5}, "flags": 524544},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "MODE": "100000"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/20archive", "fd": 5}, "buff": "0x1e172d0", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 85}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/20archive", "fd": 5}, "buff": "0x1e17325", "count": 4011},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/20archive", "fd": 5}, "buff": "0x1e172d0", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/20archive", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "open",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/20auto-upgrades", "fd": 5}, "flags": 524544},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "MODE": "100000"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/20auto-upgrades", "fd": 5}, "buff": "0x1e18b00", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 80}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/20auto-upgrades", "fd": 5}, "buff": "0x1e18b50", "count": 4016},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/20auto-upgrades", "fd": 5}, "buff": "0x1e18b00", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/20auto-upgrades", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "open",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/20snapd.conf", "fd": 5}, "flags": 524544},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "MODE": "100000"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/20snapd.conf", "fd": 5}, "buff": "0x1e1a330", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 114}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/20snapd.conf", "fd": 5}, "buff": "0x1e1a3a2", "count": 3982},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/20snapd.conf", "fd": 5}, "buff": "0x1e1a330", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/20snapd.conf", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "open",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/50command-not-found", "fd": 5}, "flags": 524544},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "MODE": "100000"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/50command-not-found", "fd": 5}, "buff": "0x1e1bb60", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 625}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/50command-not-found", "fd": 5}, "buff": "0x1e1bdd1", "count": 3471},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/50command-not-found", "fd": 5}, "buff": "0x1e1bb60", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/50command-not-found", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "open",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/50unattended-upgrades", "fd": 5}, "flags": 524544},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "MODE": "100000"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/50unattended-upgrades", "fd": 5}, "buff": "0x1e1d390", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 3800}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/50unattended-upgrades", "fd": 5}, "buff": "0x1e1e268", "count": 296},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/50unattended-upgrades", "fd": 5}, "buff": "0x1e1d390", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/50unattended-upgrades", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "open",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/70debconf", "fd": 5}, "flags": 524544},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "MODE": "100000"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/70debconf", "fd": 5}, "buff": "0x1e1ebc0", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 182}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/70debconf", "fd": 5}, "buff": "0x1e1ec76", "count": 3914},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/70debconf", "fd": 5}, "buff": "0x1e1ebc0", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/70debconf", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "open",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/99update-notifier", "fd": 5}, "flags": 524544},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "MODE": "100000"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/99update-notifier", "fd": 5}, "buff": "0x1e203f0", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 305}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/99update-notifier", "fd": 5}, "buff": "0x1e20521", "count": 3791},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/99update-notifier", "fd": 5}, "buff": "0x1e203f0", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/99update-notifier", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/share/dpkg/cputable", "fd": 5}, "buff": "0x1e21c20", "count": 8191},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 1971}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/share/dpkg/cputable", "fd": 5}, "buff": "0x1e21c20", "count": 8191},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/share/dpkg/tupletable", "fd": 6}, "buff": "0x1e24440", "count": 8191},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 1361}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/share/dpkg/tupletable", "fd": 6}, "buff": "0x1e24440", "count": 8191},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3/dist-packages/aptsources/__pycache__/__init__.cpython-36.pyc", "fd": 5}, "buff": "0x7f28744d03f8", "count": 276},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 275}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3/dist-packages/aptsources/__pycache__/__init__.cpython-36.pyc", "fd": 5}, "buff": "0x7f28744d050b", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3/dist-packages/aptsources/__pycache__/__init__.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/share/dpkg/cputable", "fd": 5}, "buff": "0x1e455e0", "count": 8191},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 1971}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/share/dpkg/cputable", "fd": 5}, "buff": "0x1e455e0", "count": 8191},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/share/dpkg/tupletable", "fd": 6}, "buff": "0x1e47e00", "count": 8191},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 1361}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/share/dpkg/tupletable", "fd": 6}, "buff": "0x1e47e00", "count": 8191},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3/dist-packages/aptsources/__pycache__/sourceslist.cpython-36.pyc", "fd": 5}, "buff": "0x1e45600", "count": 12262},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 12261}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3/dist-packages/aptsources/__pycache__/sourceslist.cpython-36.pyc", "fd": 5}, "buff": "0x1e485e5", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3/dist-packages/aptsources/__pycache__/sourceslist.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/glob.cpython-36.pyc", "fd": 5}, "buff": "0x1e45600", "count": 4260},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 4259}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/glob.cpython-36.pyc", "fd": 5}, "buff": "0x1e466a3", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/glob.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/fnmatch.cpython-36.pyc", "fd": 5}, "buff": "0x1e45600", "count": 2875},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 2874}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/fnmatch.cpython-36.pyc", "fd": 5}, "buff": "0x1e4613a", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/fnmatch.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/shutil.cpython-36.pyc", "fd": 5}, "buff": "0x1e4a240", "count": 30705},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 30704}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/shutil.cpython-36.pyc", "fd": 5}, "buff": "0x1e51a30", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/shutil.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/bz2.cpython-36.pyc", "fd": 5}, "buff": "0x1e4b3e0", "count": 11283},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 11282}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/bz2.cpython-36.pyc", "fd": 5}, "buff": "0x1e4dff2", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/bz2.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/_compression.cpython-36.pyc", "fd": 5}, "buff": "0x1e4ee90", "count": 4105},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 4104}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/_compression.cpython-36.pyc", "fd": 5}, "buff": "0x1e4fe98", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/_compression.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/lzma.cpython-36.pyc", "fd": 5}, "buff": "0x1e52000", "count": 11993},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 11992}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/lzma.cpython-36.pyc", "fd": 5}, "buff": "0x1e54ed8", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3.6/__pycache__/lzma.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3/dist-packages/aptsources/__pycache__/distinfo.cpython-36.pyc", "fd": 5}, "buff": "0x1e5b810", "count": 9017},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 9016}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/lib/python3/dist-packages/aptsources/__pycache__/distinfo.cpython-36.pyc", "fd": 5}, "buff": "0x1e5db48", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/lib/python3/dist-packages/aptsources/__pycache__/distinfo.cpython-36.pyc", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "open",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/01-vendor-ubuntu", "fd": 5}, "flags": 524544},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "MODE": "100000"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/01-vendor-ubuntu", "fd": 5}, "buff": "0x1e613e0", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 42}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/01-vendor-ubuntu", "fd": 5}, "buff": "0x1e6140a", "count": 4054},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/01-vendor-ubuntu", "fd": 5}, "buff": "0x1e613e0", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/01-vendor-ubuntu", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "open",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/01autoremove", "fd": 5}, "flags": 524544},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "MODE": "100000"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/01autoremove", "fd": 5}, "buff": "0x1e613e0", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 1018}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/01autoremove", "fd": 5}, "buff": "0x1e617da", "count": 3078},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/01autoremove", "fd": 5}, "buff": "0x1e613e0", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/01autoremove", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "open",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/01autoremove-kernels", "fd": 5}, "flags": 524544},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "MODE": "100000"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/01autoremove-kernels", "fd": 5}, "buff": "0x1e64170", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 1576}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/01autoremove-kernels", "fd": 5}, "buff": "0x1e64798", "count": 2520},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/01autoremove-kernels", "fd": 5}, "buff": "0x1e64170", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/01autoremove-kernels", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "open",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/10periodic", "fd": 5}, "flags": 524544},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "MODE": "100000"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/10periodic", "fd": 5}, "buff": "0x1e659a0", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 129}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/10periodic", "fd": 5}, "buff": "0x1e65a21", "count": 3967},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/10periodic", "fd": 5}, "buff": "0x1e659a0", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/10periodic", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "open",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/15update-stamp", "fd": 5}, "flags": 524544},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "MODE": "100000"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/15update-stamp", "fd": 5}, "buff": "0x1e671d0", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 108}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/15update-stamp", "fd": 5}, "buff": "0x1e6723c", "count": 3988},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/15update-stamp", "fd": 5}, "buff": "0x1e671d0", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/15update-stamp", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "open",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/20archive", "fd": 5}, "flags": 524544},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "MODE": "100000"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/20archive", "fd": 5}, "buff": "0x1e68a00", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 85}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/20archive", "fd": 5}, "buff": "0x1e68a55", "count": 4011},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/20archive", "fd": 5}, "buff": "0x1e68a00", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/20archive", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "open",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/20auto-upgrades", "fd": 5}, "flags": 524544},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "MODE": "100000"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/20auto-upgrades", "fd": 5}, "buff": "0x1e6a230", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 80}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/20auto-upgrades", "fd": 5}, "buff": "0x1e6a280", "count": 4016},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/20auto-upgrades", "fd": 5}, "buff": "0x1e6a230", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/20auto-upgrades", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "open",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/20snapd.conf", "fd": 5}, "flags": 524544},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "MODE": "100000"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/20snapd.conf", "fd": 5}, "buff": "0x1e6c1a0", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 114}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/20snapd.conf", "fd": 5}, "buff": "0x1e6c212", "count": 3982},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/20snapd.conf", "fd": 5}, "buff": "0x1e6c1a0", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/20snapd.conf", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "open",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/50command-not-found", "fd": 5}, "flags": 524544},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "MODE": "100000"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/50command-not-found", "fd": 5}, "buff": "0x1e6d9d0", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 625}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/50command-not-found", "fd": 5}, "buff": "0x1e6dc41", "count": 3471},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/50command-not-found", "fd": 5}, "buff": "0x1e6d9d0", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/50command-not-found", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "open",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/50unattended-upgrades", "fd": 5}, "flags": 524544},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "MODE": "100000"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/50unattended-upgrades", "fd": 5}, "buff": "0x1e6f200", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 3800}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/50unattended-upgrades", "fd": 5}, "buff": "0x1e700d8", "count": 296},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/50unattended-upgrades", "fd": 5}, "buff": "0x1e6f200", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/50unattended-upgrades", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "open",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/70debconf", "fd": 5}, "flags": 524544},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "MODE": "100000"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/70debconf", "fd": 5}, "buff": "0x1e70a30", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 182}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/70debconf", "fd": 5}, "buff": "0x1e70ae6", "count": 3914},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/70debconf", "fd": 5}, "buff": "0x1e70a30", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/70debconf", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "open",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/99update-notifier", "fd": 5}, "flags": 524544},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "MODE": "100000"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/99update-notifier", "fd": 5}, "buff": "0x1e72260", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 305}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/99update-notifier", "fd": 5}, "buff": "0x1e72391", "count": 3791},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/99update-notifier", "fd": 5}, "buff": "0x1e72260", "count": 4096},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/etc/apt/apt.conf.d/99update-notifier", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/share/dpkg/cputable", "fd": 5}, "buff": "0x1e73a90", "count": 8191},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 1971}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/share/dpkg/cputable", "fd": 5}, "buff": "0x1e73a90", "count": 8191},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/share/dpkg/tupletable", "fd": 6}, "buff": "0x1e75aa0", "count": 8191},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 1361}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/usr/share/dpkg/tupletable", "fd": 6}, "buff": "0x1e75aa0", "count": 8191},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/sources.list", "fd": 5}, "buff": "0x1e73ab0", "count": 8192},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 2765}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/sources.list", "fd": 5}, "buff": "0x1e73ab0", "count": 8192},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/etc/apt/sources.list", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/sources.list.d/nodesource.list", "fd": 5}, "buff": "0x1e73ae0", "count": 8192},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 110}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "/etc/apt/sources.list.d/nodesource.list", "fd": 5}, "buff": "0x1e73b80", "count": 8192},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/etc/apt/sources.list.d/nodesource.list", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "pipe:[146543]", "fd": 7} },
+		"metadata": {"PID": 8628, "PPID": 8627, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "pipe:[146544]", "fd": 10} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "pipe:[146544]", "fd": 9} },
+		"metadata": {"PID": 8628, "PPID": 8627, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "pipe:[146543]", "fd": 8} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "pipe:[133016]", "fd": 3} },
+		"metadata": {"PID": 8628, "PPID": 8627, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "pipe:[133016]", "fd": 4} },
+		"metadata": {"PID": 8628, "PPID": 8627, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/share/command-not-found/commands.db", "fd": 5} },
+		"metadata": {"PID": 8628, "PPID": 8627, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/dev/null", "fd": 6} },
+		"metadata": {"PID": 8628, "PPID": 8627, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "pipe:[146543]", "fd": 8} },
+		"metadata": {"PID": 8628, "PPID": 8627, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/proc/8628/fd", "fd": 7} },
+		"metadata": {"PID": 8628, "PPID": 8627, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "pipe:[146544]", "fd": 9}, "buff": "0x1e91a80", "count": 50000},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "pipe:[146544]", "fd": 9} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "read",
+		"params": {"file": {"path": "pipe:[146543]", "fd": 7}, "buff": "0x1e920f0", "count": 8192},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_READ": 0}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "pipe:[146543]", "fd": 7} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/dev/null", "fd": 6} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
+	},{
+		"function": "write",
+		"params": {"file": {"path": "/dev/pts/3", "fd": 2}, "buff": "0x1cf5870", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_WRITTEN": 1}
+	},{
+		"function": "write",
+		"params": {"file": {"path": "/dev/pts/3", "fd": 2}, "buff": "0x1cf5870", "count": 41},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_WRITTEN": 41}
+	},{
+		"function": "write",
+		"params": {"file": {"path": "/dev/pts/3", "fd": 2}, "buff": "0x1cf5870", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_WRITTEN": 1}
+	},{
+		"function": "write",
+		"params": {"file": {"path": "/dev/pts/3", "fd": 2}, "buff": "0x1cf5870", "count": 30},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_WRITTEN": 30}
+	},{
+		"function": "write",
+		"params": {"file": {"path": "/dev/pts/3", "fd": 2}, "buff": "0x1cf5870", "count": 42},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_WRITTEN": 42}
+	},{
+		"function": "write",
+		"params": {"file": {"path": "/dev/pts/3", "fd": 2}, "buff": "0x1cf5870", "count": 42},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_WRITTEN": 42}
+	},{
+		"function": "write",
+		"params": {"file": {"path": "/dev/pts/3", "fd": 2}, "buff": "0x1cf5870", "count": 47},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_WRITTEN": 47}
+	},{
+		"function": "write",
+		"params": {"file": {"path": "/dev/pts/3", "fd": 2}, "buff": "0x1cf5870", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_WRITTEN": 1}
+	},{
+		"function": "write",
+		"params": {"file": {"path": "/dev/pts/3", "fd": 2}, "buff": "0x1cf5870", "count": 33},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_WRITTEN": 33}
+	},{
+		"function": "write",
+		"params": {"file": {"path": "/dev/pts/3", "fd": 2}, "buff": "0x1cf5870", "count": 1},
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen", "BYTES_WRITTEN": 1}
+	},{
+		"function": "close",
+		"params": {"file": {"path": "/usr/share/command-not-found/commands.db", "fd": 5} },
+		"metadata": {"PID": 8627, "PPID": 8626, "EXE_PATH": "/usr/bin/python3.6", "CMD": "/usr/bin/python3 /usr/lib/command-not-found -- popen"}
 	}
 ]
 }
