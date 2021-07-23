@@ -10,7 +10,7 @@
             "exprs": [
                 "(.*)/dev/pts/(.*)"
             ],
-            "mode": 1
+            "mode": 2
         },
         {
             "permission" : [
@@ -31,24 +31,20 @@
 "logs": [
 	{},{
 		"function": "open",
-		"params": {"file": {"path": "/home/lonewolf/repos/Process-Activity-Firewall/build/ab", "fd": 3}, "flags": 0},
-		"metadata": {"PID": 94936, "PPID": 65427, "EXE_PATH": "/usr/bin/cat", "CMD": "cat ab", "MODE": "100000"}
+		"params": {"file": {"path": "/home/lonewolf/repos/Process-Activity-Firewall/build/abhsdflljhdsfkk", "fd": 3}, "flags": 0},
+		"metadata": {"PID": 3627, "PPID": 3324, "EXE_PATH": "/bin/cat", "CMD": "cat abhsdflljhdsfkk", "MODE": "100000"}
 	},{
 		"function": "read",
-		"params": {"file": {"path": "/home/lonewolf/repos/Process-Activity-Firewall/build/ab", "fd": 3}, "buff": "0x7fc0d3f68000", "count": 131072},
-		"metadata": {"PID": 94936, "PPID": 65427, "EXE_PATH": "/usr/bin/cat", "CMD": "cat ab", "BYTES_READ": 4}
-	},{
-		"function": "write",
-		"params": {"file": {"path": "/dev/pts/2", "fd": 1}, "buff": "0x7fc0d3f68000", "count": 4},
-		"metadata": {"PID": 94936, "PPID": 65427, "EXE_PATH": "/usr/bin/cat", "CMD": "cat ab", "BYTES_WRITTEN": 4}
+		"params": {"file": {"path": "/home/lonewolf/repos/Process-Activity-Firewall/build/abhsdflljhdsfkk", "fd": 3}, "buff": "0x7fedac6b2000", "count": 131072},
+		"metadata": {"PID": 3627, "PPID": 3324, "EXE_PATH": "/bin/cat", "CMD": "cat abhsdflljhdsfkk", "BYTES_READ": 4}
 	},{
 		"function": "read",
-		"params": {"file": {"path": "/home/lonewolf/repos/Process-Activity-Firewall/build/ab", "fd": 3}, "buff": "0x7fc0d3f68000", "count": 131072},
-		"metadata": {"PID": 94936, "PPID": 65427, "EXE_PATH": "/usr/bin/cat", "CMD": "cat ab", "BYTES_READ": 0}
+		"params": {"file": {"path": "/home/lonewolf/repos/Process-Activity-Firewall/build/abhsdflljhdsfkk", "fd": 3}, "buff": "0x7fedac6b2000", "count": 131072},
+		"metadata": {"PID": 3627, "PPID": 3324, "EXE_PATH": "/bin/cat", "CMD": "cat abhsdflljhdsfkk", "BYTES_READ": 0}
 	},{
 		"function": "close",
-		"params": {"file": {"path": "/home/lonewolf/repos/Process-Activity-Firewall/build/ab", "fd": 3} },
-		"metadata": {"PID": 94936, "PPID": 65427, "EXE_PATH": "/usr/bin/cat", "CMD": "cat ab"}
+		"params": {"file": {"path": "/home/lonewolf/repos/Process-Activity-Firewall/build/abhsdflljhdsfkk", "fd": 3} },
+		"metadata": {"PID": 3627, "PPID": 3324, "EXE_PATH": "/bin/cat", "CMD": "cat abhsdflljhdsfkk"}
 	}
 ]
 }

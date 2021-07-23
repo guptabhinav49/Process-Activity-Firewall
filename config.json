@@ -9,7 +9,7 @@
             "exprs": [
                 "(.*)/dev/pts/(.*)"
             ],
-            "mode": 1
+            "mode": 2
         },
         {
             "permission" : [

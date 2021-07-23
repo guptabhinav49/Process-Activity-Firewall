@@ -18,7 +18,7 @@ add_library(
 )
 # the utility executables
 add_executable(listener listener.cpp utilites.cpp)
-add_executable(config_test test/config.cpp)
+# add_executable(config_test test/config.cpp)
 
 target_link_libraries(intercept 
     PRIVATE -ldl
@@ -30,7 +30,11 @@ target_link_libraries(listener
     PRIVATE cwalk
     PRIVATE trie
 )
-target_link_libraries(config_test 
-    PRIVATE trie
-    PRIVATE cwalk
+
+target_compile_options(cwalk
+    PRIVATE -fPIC
 )
+# target_link_libraries(config_test 
+#     PRIVATE trie
+#     PRIVATE cwalk
+# )
