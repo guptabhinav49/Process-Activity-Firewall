@@ -29,6 +29,9 @@ target_link_libraries(listener
     PRIVATE cwalk
     PRIVATE trie
 )
+target_compile_options(cwalk
+    PRIVATE -fPIC
+)
 # target_link_libraries(config_test 
 #    PRIVATE trie
 #    PRIVATE cwalk
